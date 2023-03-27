@@ -1,0 +1,35 @@
+.about-me {
+  max-width: 1300px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr;
+  gap: 200px;
+}
+
+.about-me h2 {
+  align-self: center;
+}
+
+.about-me p {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 20px;
+}
+
+.about-me a,
+strong {
+  color: #f2f2f2;
+}
+
+.about-me .subtitle {
+  max-width: 6ch;
+}
+
+.about-me-content {
+  padding: 20px;
+  background: #222222;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
