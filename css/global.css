@@ -33,6 +33,7 @@ img {
   max-width: 6ch;
   color: #a8a8a8;
   align-self: center;
+  transition: 0.8s;
 }
 
 @media (max-width: 1200px) {

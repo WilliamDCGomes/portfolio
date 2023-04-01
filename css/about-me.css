@@ -10,7 +10,6 @@
 .about-me p {
   font-size: 1.5rem;
   line-height: 1.33;
-  max-width: 40ch;
   margin-bottom: 20px;
 }
 
@@ -40,10 +39,6 @@ strong {
   .about-me .subtitle {
     max-width: max-content;
     justify-self: center;
-  }
-
-  .about-me p {
-    max-width: max-content;
   }
 
   .about-me-content p {

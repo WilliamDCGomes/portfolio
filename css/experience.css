@@ -29,7 +29,46 @@
   position: relative;
 }
 
-.companies:nth-child(even) {
+.current-company::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  top: 20px;
+  left: -10px;
+  background: linear-gradient(#b6f829, #67dd0a);
+}
+
+/*.div-first-experience-content {
+  align-self: center;
+}*/
+
+.image-current-company {
+  width: 0px;
+  transition: 0.8s;
+}
+
+.first-experience-content {
+  max-width: 1300px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+  gap: 50px;
+}
+
+.first-experience-content:hover .image-current-company {
+  margin-top: 15%;
+  width: 100%;
+}
+
+.first-experience-content:hover .hide-experience-title {
+  font-size: 0px;
+}
+
+.companies:nth-child(odd) {
   grid-column: 2;
 }
 
@@ -70,7 +109,7 @@
   margin-left: 20px;
 }
 
-.companies:nth-child(even)::before {
+.companies:nth-child(odd)::before {
   content: "";
   display: block;
   width: 4px;
@@ -81,7 +120,7 @@
   left: -10px;
 }
 
-.companies:nth-child(odd)::after {
+.companies:nth-child(even)::after {
   content: "";
   display: block;
   width: 4px;
@@ -90,17 +129,6 @@
   position: absolute;
   top: 20px;
   right: -10px;
-}
-
-.current-company::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 4px;
-  height: 20px;
-  top: 20px;
-  left: -10px;
-  background: linear-gradient(#b6f829, #67dd0a);
 }
 
 .company-functions {
@@ -116,7 +144,7 @@
   font-size: 1.25rem;
 }
 
-.companies:nth-child(odd) .period-company {
+.companies:nth-child(even) .period-company {
   margin-left: 105%;
   text-align: start;
   left: 0px;
@@ -168,13 +196,13 @@
     margin-left: 25%;
   }
 
-  .companies:nth-child(odd) .period-company {
+  .companies:nth-child(even) .period-company {
     margin-left: 0px;
     text-align: end;
     left: -220px;
   }
 
-  .companies:nth-child(odd)::before {
+  .companies:nth-child(even)::before {
     content: "";
     display: block;
     width: 4px;
@@ -185,13 +213,13 @@
     left: -10px;
   }
 
-  .companies:nth-child(odd)::after {
+  .companies:nth-child(even)::after {
     content: "";
     width: 0px;
     height: 0px;
   }
 
-  .companies:nth-child(even) {
+  .companies:nth-child(odd) {
     grid-column: 1;
   }
 }
@@ -205,12 +233,12 @@
     margin-left: 0px;
   }
 
-  .companies:nth-child(odd)::before {
+  .companies:nth-child(even)::before {
     width: 0px;
     height: 0px;
   }
 
-  .companies:nth-child(even)::before {
+  .companies:nth-child(odd)::before {
     width: 0px;
     height: 0px;
   }
@@ -229,7 +257,7 @@
     top: 0px;
   }
 
-  .companies:nth-child(odd) .period-company {
+  .companies:nth-child(even) .period-company {
     margin-left: 0px;
   }
 
