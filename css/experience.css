@@ -46,6 +46,32 @@
 
 .image-current-company {
   width: 0px;
+  position: absolute;
+  right: 102%;
+  transition: 0.8s;
+}
+
+.image-company {
+  position: absolute;
+  top: 50px;
+  right: 102%;
+  width: 0px;
+  transition: 0.8s;
+}
+
+.image-company:nth-child(even) {
+  position: absolute;
+  width: 100px;
+  transition: 0.8s;
+}
+
+.companies:nth-child(even) .image-company {
+  margin-left: 105%;
+  left: 0px;
+}
+
+.about-companie {
+  width: 0px;
   transition: 0.8s;
 }
 
@@ -66,6 +92,22 @@
 
 .first-experience-content:hover .hide-experience-title {
   font-size: 0px;
+}
+
+.second-company:hover .second-company-image {
+  width: 80%;
+}
+
+.third-company:hover .third-company-image {
+  width: 80%;
+}
+
+.fourth-company:hover .fourth-company-image {
+  width: 60%;
+}
+
+.fifth-company:hover .fifth-company-image {
+  width: 60%;
 }
 
 .companies:nth-child(odd) {
@@ -186,6 +228,16 @@
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 20px 0px;
+  }
+
+  .first-experience-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px 0px;
+  }
+
+  .disabled-hover {
+    pointer-events: none;
   }
 
   .companies {

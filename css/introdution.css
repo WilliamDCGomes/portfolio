@@ -30,6 +30,7 @@
 .title {
   max-width: 15ch;
   font-size: 6rem;
+  transition: 0.8s;
 }
 
 .introdution p {
@@ -39,6 +40,7 @@
 .profile-image {
   min-width: 200px;
   border-radius: 10px;
+  transition: 0.8s;
 }
 
 @media (max-width: 1200px) {

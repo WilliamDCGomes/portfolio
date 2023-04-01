@@ -36,6 +36,10 @@ img {
   transition: 0.8s;
 }
 
+.experience-subtitle {
+  margin-top: 150px;
+}
+
 @media (max-width: 1200px) {
   .subtitle {
     font-size: 5rem;
@@ -49,6 +53,10 @@ img {
     font-size: 4rem;
     max-width: max-content;
     text-align: center;
+  }
+
+  .experience-subtitle {
+    margin-top: 0px;
   }
 }
 
