@@ -18,6 +18,17 @@
   position: relative;
 }
 
+.current-company {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px 20px;
+  padding: 20px;
+  background: #222222;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
 .companies:nth-child(even) {
   grid-column: 2;
 }
@@ -64,7 +75,7 @@
   display: block;
   width: 4px;
   height: 20px;
-  background: linear-gradient(#b6f829, #67dd0a);
+  background: linear-gradient(#05b9d2, #328ef0);
   position: absolute;
   top: 20px;
   left: -10px;
@@ -75,10 +86,21 @@
   display: block;
   width: 4px;
   height: 20px;
-  background: linear-gradient(#b6f829, #67dd0a);
+  background: linear-gradient(#05b9d2, #328ef0);
   position: absolute;
   top: 20px;
   right: -10px;
+}
+
+.current-company::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  top: 20px;
+  left: -10px;
+  background: linear-gradient(#b6f829, #67dd0a);
 }
 
 .company-functions {
@@ -142,6 +164,10 @@
     margin-left: 25%;
   }
 
+  .current-company {
+    margin-left: 25%;
+  }
+
   .companies:nth-child(odd) .period-company {
     margin-left: 0px;
     text-align: end;
@@ -153,7 +179,7 @@
     display: block;
     width: 4px;
     height: 20px;
-    background: linear-gradient(#b6f829, #67dd0a);
+    background: linear-gradient(#05b9d2, #328ef0);
     position: absolute;
     top: 20px;
     left: -10px;
@@ -175,11 +201,21 @@
     margin-left: 0px;
   }
 
+  .current-company {
+    margin-left: 0px;
+  }
+
   .companies:nth-child(odd)::before {
     width: 0px;
     height: 0px;
   }
+
   .companies:nth-child(even)::before {
+    width: 0px;
+    height: 0px;
+  }
+
+  .current-company::before {
     width: 0px;
     height: 0px;
   }
@@ -211,6 +247,10 @@
 @media (max-width: 500px) {
   .company-description {
     font-size: 1rem;
+  }
+
+  .current-company {
+    grid-template-columns: 1fr 4fr;
   }
 
   .companies {
