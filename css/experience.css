@@ -3,8 +3,8 @@
   padding: 40px 20px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.5fr 2.5fr;
-  gap: 200px;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
 }
 
 .companies {
@@ -16,6 +16,10 @@
   margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
+}
+
+.companies:nth-child(even) {
+  grid-column: 2;
 }
 
 .companies-introdution {
@@ -55,7 +59,7 @@
   margin-left: 20px;
 }
 
-.companies::before {
+.companies:nth-child(even)::before {
   content: "";
   display: block;
   width: 4px;
@@ -66,6 +70,17 @@
   left: -10px;
 }
 
+.companies:nth-child(odd)::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  top: 20px;
+  right: -10px;
+}
+
 .company-functions {
   margin-bottom: 20px;
 }
@@ -73,10 +88,16 @@
 .period-company {
   position: absolute;
   top: 20px;
-  left: -200px;
-  width: 180px;
+  left: -220px;
+  width: 200px;
   text-align: end;
   font-size: 1.25rem;
+}
+
+.companies:nth-child(odd) .period-company {
+  margin-left: 105%;
+  text-align: start;
+  left: 0px;
 }
 
 .company-information {
@@ -108,4 +129,95 @@
   border-radius: 4px;
   background: #141414;
   padding: 5px 10px;
+}
+
+@media (max-width: 900px) {
+  .experience {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px 0px;
+  }
+
+  .companies {
+    margin-left: 25%;
+  }
+
+  .companies:nth-child(odd) .period-company {
+    margin-left: 0px;
+    text-align: end;
+    left: -220px;
+  }
+
+  .companies:nth-child(odd)::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    position: absolute;
+    top: 20px;
+    left: -10px;
+  }
+
+  .companies:nth-child(odd)::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+  }
+
+  .companies:nth-child(even) {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .companies {
+    margin-left: 0px;
+  }
+
+  .companies:nth-child(odd)::before {
+    width: 0px;
+    height: 0px;
+  }
+  .companies:nth-child(even)::before {
+    width: 0px;
+    height: 0px;
+  }
+
+  .period-company {
+    position: static;
+    text-align: center;
+    justify-self: center;
+    grid-column: 1 / -1;
+    left: 0px;
+    top: 0px;
+  }
+
+  .companies:nth-child(odd) .period-company {
+    margin-left: 0px;
+  }
+
+  .company-information {
+    grid-column: 1 / -1;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .job-information {
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 500px) {
+  .company-description {
+    font-size: 1rem;
+  }
+
+  .companies {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  .companies h4 {
+    font-size: 1.25rem;
+  }
 }

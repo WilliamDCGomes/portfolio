@@ -7,10 +7,6 @@
   gap: 200px;
 }
 
-.about-me h2 {
-  align-self: center;
-}
-
 .about-me p {
   font-size: 1.5rem;
   line-height: 1.33;
@@ -32,4 +28,33 @@ strong {
   background: #222222;
   margin-bottom: 20px;
   border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .about-me {
+    grid-template-columns: 1fr;
+    gap: 20px 0px;
+    max-width: 900px;
+  }
+
+  .about-me .subtitle {
+    max-width: max-content;
+    justify-self: center;
+  }
+
+  .about-me p {
+    max-width: max-content;
+  }
+
+  .about-me-content p {
+    font-size: 1.25rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-me-content p {
+    font-size: 1rem;
+    justify-content: center;
+  }
 }
