@@ -50,6 +50,19 @@ img {
   margin-top: 150px;
 }
 
+@media (min-width: 2500px) {
+  .home {
+    background-image: url("../assets/images/background_home_ultrawide_50.png");
+    max-height: 800px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home {
+    background-image: url("../assets/images/background_home_ultrawide.png");
+  }
+}
+
 @media (max-width: 1200px) {
   .subtitle {
     font-size: 5rem;

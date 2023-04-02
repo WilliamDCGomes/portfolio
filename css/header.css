@@ -1,15 +1,20 @@
 .header {
-  max-width: 1300px;
+  max-width: 2900px;
   padding: 40px 20px;
-  margin: 0 auto;
+  margin: 0px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .header a {
   background: #03234f;
   border-radius: 10px;
+}
+
+.space-content {
+  width: 40vw;
+  max-width: 700px;
 }
 
 .header a:hover {
@@ -35,6 +40,12 @@
 
 .logo {
   width: 5rem;
+}
+
+@media (min-width: 1300px) {
+  .header {
+    background-color: black;
+  }
 }
 
 @media (max-width: 600px) {

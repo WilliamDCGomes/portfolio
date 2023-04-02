@@ -29,7 +29,13 @@
 
 @media (min-width: 2000px) {
   .introdution {
-    margin: 100px auto 600px auto;
+    margin: 300px auto 400px auto;
+  }
+}
+
+@media (min-width: 2500px) {
+  .introdution {
+    margin: 400px auto 500px auto;
   }
 }
 
@@ -61,7 +67,7 @@
 @media (max-width: 900px) {
   .introdution {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 100px;
     justify-items: center;
   }
 
@@ -76,25 +82,40 @@
 }
 
 @media (max-width: 800px) {
+  .introdution {
+    gap: 90px;
+  }
+
   .title {
     margin-top: 50px;
     font-size: 3rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .title {
-    margin-top: 0px;
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .introdution {
+    margin: 50px auto 28vw auto;
+  }
+
+  .title {
+    margin-top: 30px;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 500px) {
   .introdution {
-    margin: 100px auto 25vw auto;
+    margin: 70px auto 25vw auto;
   }
 
   .title {
-    font-size: 2rem;
+    margin-top: 0px;
+    font-size: 1.85rem;
   }
 }
