@@ -251,7 +251,7 @@
   .companies:nth-child(even) .period-company {
     margin-left: 0px;
     text-align: end;
-    left: -220px;
+    left: -270px;
   }
 
   .companies:nth-child(even)::before {

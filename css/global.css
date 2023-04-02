@@ -26,6 +26,16 @@ img {
   display: block;
 }
 
+.home {
+  background-image: url("../assets/images/background_home.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  justify-content: center;
+  max-height: 600px;
+  transition: 0.8s;
+}
+
 .subtitle {
   font-size: 8rem;
   word-break: break-all;
@@ -69,5 +79,11 @@ img {
 @media (max-width: 500px) {
   .subtitle {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitle {
+    font-size: 1rem;
   }
 }
