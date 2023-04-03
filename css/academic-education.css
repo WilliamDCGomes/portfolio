@@ -1,0 +1,20 @@
+.section-education {
+  background-color: white;
+  max-width: max-content;
+  padding: 0px 16vw;
+}
+
+.section-education h2,
+.section-education h3,
+.section-education p,
+.section-education span {
+  color: black;
+}
+
+.div-section-education {
+  grid-template-columns: 1fr 1fr;
+}
+
+.background-card-education {
+  background-color: #e3e3e3;
+}
