@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.header a {
+.header li a {
   background: #03234f;
   border-radius: 10px;
 }
@@ -17,7 +17,7 @@
   max-width: 700px;
 }
 
-.header a:hover {
+.header li a:hover {
   color: white;
   background: #090a38;
 }
@@ -38,8 +38,15 @@
   display: block;
 }
 
-.logo {
-  width: 5rem;
+.contact-media-icons {
+  width: 40px;
+}
+
+.medias-space {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: end;
 }
 
 @media (min-width: 1300px) {
