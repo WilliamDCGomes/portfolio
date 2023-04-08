@@ -23,8 +23,11 @@
 }
 
 .introdution p {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   grid-column: 3;
+  color: #a8a8a8;
+  font-weight: 600;
+  transition: 0.8s;
 }
 
 @media (min-width: 2000px) {
