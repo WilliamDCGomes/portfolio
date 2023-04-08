@@ -39,7 +39,37 @@
 }
 
 .contact-media-icons {
+  display: inline-block;
   width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-color: #090a38;
+}
+
+.email-icon {
+  border-color: transparent;
+  border-image-width: 0px;
+  background-image: url("../assets/images/email-icon.png");
+}
+
+.linkedin-icon {
+  background-image: url("../assets/images/linkedin-icon.png");
+}
+
+.github-icon {
+  background-image: url("../assets/images/github-icon.png");
+}
+
+.email-icon:hover {
+  background-image: url("../assets/images/email-icon-selecionado.png");
+}
+
+.linkedin-icon:hover {
+  background-image: url("../assets/images/linkedin-icon-selecionado.png");
+}
+
+.github-icon:hover {
+  background-image: url("../assets/svg/github-icon-selecionado.svg");
 }
 
 .medias-space {
