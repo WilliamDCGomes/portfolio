@@ -64381,7 +64381,7 @@ r=A.anQ(q.c,r,q.w,p,p,B.m)
 return A.bF(A.alH(r,p,q.as,s),o,q.f)}}
 A.jq.prototype={
 R(a){var s=null
-return A.am8(!1,!0,A.iX(this.d,s,this.c.b*3/100,s),s,!0,s,s,s,s,s,s,this.e,s,s,s)}}
+return A.am8(!1,!0,A.iX(this.d,s,this.c.d*4.5/100,s),s,!0,s,s,s,s,s,s,this.e,s,s,s)}}
 A.Kn.prototype={
 R(a){var s,r=this,q=null,p=r.f
 if(p==null)p=B.m
@@ -64461,7 +64461,7 @@ this.aQ()},
 R(a){return new A.dy(B.hf,null,null,A.Fa(new A.acE(this)),null)}}
 A.acE.prototype={
 $2(b1,b2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=null,a0=4279045659,a1=b2.d,a2=Math.max(a1*100/100,550),a3=b2.b,a4=a3*10/100,a5=a3*60/100,a6=t.aM,a7=a1*6/100,a8=this.a,a9=a3*2/100,b0=t.F
-a5=A.bF(A.nc(A.a([A.VO(new A.hl(new A.bt(a4,0,a4,0),A.bF(A.ain(A.a([A.bF(a,a1*5/100,a),A.eK(A.dE(b1,B.ac,a6).grK(),A.fh(b2,50),B.ex,2,a,B.a7),A.bF(a,a1/100,a),A.eK(A.dE(b1,B.ac,a6).grO(),A.fh(b2,30),B.A,2,a,B.a7),A.bF(a,a7,a),A.bF(A.eK(A.dE(b1,B.ac,a6).grT(),A.fh(b2,25),B.A,4,a,B.a7),a,a5),A.bF(a,a7,a),A.vK(A.a([A.alM(A.bF(a,a,a)),new A.jq(b2,"lib/web/assets/images/instagram_icon.png",new A.acw(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/youtube_icon.png",new A.acx(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/tiktok_icon.png",new A.acy(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/linkedin_icon.png",new A.acz(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/github_icon.png",new A.acA(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/gmail_icon.png",new A.acB(a8),a),A.alM(A.bF(a,a,a))],b0),B.wM,B.cK),new A.dy(B.hf,a,a,new A.hl(new A.bt(0,a1*15/100,0,0),A.Wh(A.a([A.eK(A.dE(b1,B.ac,a6).grN(),A.fh(b2,15),B.A,3,a,B.a7),B.G2],b0),B.b9,B.wJ,B.cK,0),a),a)],b0),new A.uW(a),!0),a,a5),a),a,a)],b0),B.cW),a2,a)
+a5=A.bF(A.nc(A.a([A.VO(new A.hl(new A.bt(a4,0,a4,0),A.bF(A.ain(A.a([A.bF(a,a1*5/100,a),A.eK(A.dE(b1,B.ac,a6).grK(),A.fh(b2,50),B.ex,4,a,B.a7),A.bF(a,a1/100,a),A.eK(A.dE(b1,B.ac,a6).grO(),A.fh(b2,30),B.A,4,a,B.a7),A.bF(a,a7,a),A.bF(A.eK(A.dE(b1,B.ac,a6).grT(),A.fh(b2,25),B.A,8,a,B.a7),a,a5),A.bF(a,a7,a),A.vK(A.a([A.alM(A.bF(a,a,a)),new A.jq(b2,"lib/web/assets/images/instagram_icon.png",new A.acw(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/youtube_icon.png",new A.acx(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/tiktok_icon.png",new A.acy(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/linkedin_icon.png",new A.acz(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/github_icon.png",new A.acA(a8),a),A.bF(a,a,a9),new A.jq(b2,"lib/web/assets/images/gmail_icon.png",new A.acB(a8),a),A.alM(A.bF(a,a,a))],b0),B.wM,B.cK),new A.dy(B.hf,a,a,new A.hl(new A.bt(0,a1*15/100,0,0),A.Wh(A.a([A.eK(A.dE(b1,B.ac,a6).grN(),A.fh(b2,15),B.A,3,a,B.a7),B.G2],b0),B.b9,B.wJ,B.cK,0),a),a)],b0),new A.uW(a),!0),a,a5),a),a,a)],b0),B.cW),a2,a)
 a9=A.aO(a0)
 a7=a1*50/100
 a7=A.Wh(A.a([A.hP(a,A.aO(a0),a,a7,a,a,a),A.hP(a,A.aO(4278388498),a,a7,a,a,a)],b0),B.b9,B.b0,B.cK,0)
@@ -64479,7 +64479,7 @@ i=A.bF(a,s,a)
 h=a3/100
 g=A.vK(A.a([A.iX("lib/web/assets/images/resume_icon.png",a,a3*1.5/100,a),A.bF(a,a,a3*0.5/100),A.eK(A.dE(b1,B.ac,a6).grM(),h,B.cx,2,B.az,B.a7)],b0),B.b0,B.cJ)
 f=A.bF(a,a1*8/100,a)
-a6=A.eK(A.dE(b1,B.ac,a6).grL(),A.fh(b2,18),B.cx,a,B.az,B.a7)
+a6=A.eK(A.dE(b1,B.ac,a6).grL(),A.fh(b2,18),B.cx,3,B.az,B.a7)
 p=A.bF(a,p,a)
 e=a8.d
 e===$&&A.b()
@@ -64489,7 +64489,7 @@ e.ax===$&&A.b()
 e=a3*3/100
 c=a3*25/100
 b=a3*18.75/100
-return A.bF(A.ain(A.a([a5,A.bF(A.hP(A.nc(A.a([a7,new A.hl(new A.bt(r,s,r,s),A.bF(A.ain(A.a([q,o,n,m,l,k,j,i,new A.dy(B.hg,a,a,new A.AW(a4,B.em,B.em,B.cw,new A.acC(),g,b2,a),a),f,a6,p,A.bF(new A.ro(new A.Vw(a4,0.14285714285714285,!0,!0,B.eu,B.FC,B.kn),new A.acD(a8,b2),d,20,a),a,a3*50/100)],b0),new A.uW(a),!0),a,a3*40/100),a),new A.dy(B.d5,a,a,A.hP(A.nc(A.a([new A.dy(B.d5,a,a,A.hP(a,B.em,a,c,a,a,b),a),new A.dy(B.d5,a,a,A.hP(A.iX("lib/web/assets/images/image_profile.jpg",a,c,b),a,a,a,new A.bt(0,h,h,0),a,a),a)],b0),B.cW),a,a,a,a,new A.bt(r,e,r,e),a3*34/100),a)],b0),B.cW),a9,a,a,a,a,a),a2,a)],b0),a,!0),a1*90/100,a)},
+return A.bF(A.ain(A.a([a5,A.bF(A.hP(A.nc(A.a([a7,new A.hl(new A.bt(r,s,r,s),A.bF(A.ain(A.a([q,o,n,m,l,k,j,i,new A.dy(B.hg,a,a,new A.AW(a4,B.em,B.em,B.cw,new A.acC(),g,b2,a),a),f,a6,p,A.bF(new A.ro(new A.Vw(a3*22/100,0.14285714285714285,!0,!0,B.eu,B.FC,B.kn),new A.acD(a8,b2),d,20,a),a,a3*50/100)],b0),new A.uW(a),!0),a,a3*40/100),a),new A.dy(B.d5,a,a,A.hP(A.nc(A.a([new A.dy(B.d5,a,a,A.hP(a,B.em,a,c,a,a,b),a),new A.dy(B.d5,a,a,A.hP(A.iX("lib/web/assets/images/image_profile.jpg",a,c,b),a,a,a,new A.bt(0,h,h,0),a,a),a)],b0),B.cW),a,a,a,a,new A.bt(r,e,r,e),a3*34/100),a)],b0),B.cW),a9,a,a,a,a,a),a2,a)],b0),a,!0),a1*90/100,a)},
 $S:136}
 A.acw.prototype={
 $0(){var s=this.a.d
@@ -64541,7 +64541,7 @@ R(a){var s=this,r=null,q=s.ay.d,p=A.alI(r,r,s.x,r,r,r,2,r,r,r,r,r,s.as,r,new A.d
 return A.bF(A.alH(s.ax,r,s.at,p),q*6/100,s.f)}}
 A.ok.prototype={
 R(a){var s=null,r=this.e,q=r.b,p=q*0.5/100,o=A.AM(p)
-return A.bF(A.Wh(A.a([A.hP(A.iX(this.c,B.e2,s,q*2/100),s,new A.iJ(B.EL,s,s,o,s,s,B.d8),s,new A.bt(0,0,0,p),new A.bt(p,p,p,p),s),A.eK(this.d,A.fh(r,14),B.cx,2,B.ch,B.a7)],t.F),B.b9,B.b0,B.cJ,0),s,q*4/100)}}
+return A.bF(A.Wh(A.a([A.hP(A.iX(this.c,B.e2,s,r.d*4.5/100),s,new A.iJ(B.EL,s,s,o,s,s,B.d8),s,new A.bt(0,0,0,p),new A.bt(p,p,p,p),s),A.eK(this.d,A.fh(r,14),B.cx,6,B.ch,B.a7)],t.F),B.b9,B.b0,B.cJ,0),s,q*4/100)}}
 A.Km.prototype={
 R(a){var s,r=this,q=null,p=r.x
 if(p==null)p=B.A
