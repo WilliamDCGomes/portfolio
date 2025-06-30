@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../controller/home_controller.dart';
-import 'package:universal_html/html.dart' as web;
 import '../../../../enums/social_media_enum.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
@@ -56,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                                   TextWebWidget(
                                     AppLocalizations.of(context)!.homePage_FirstIntroduction,
                                     fontSize: ScreenSizeHelper.sp(constraints, 50),
-                                    maxLines: 2,
+                                    maxLines: 4,
                                     fontWeight: FontWeight.bold,
                                     textColor: const Color(0XFFFAFAFA),
                                   ),
@@ -64,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                                   TextWebWidget(
                                     AppLocalizations.of(context)!.homePage_SecondIntroduction,
                                     fontSize: ScreenSizeHelper.sp(constraints, 30),
-                                    maxLines: 2,
+                                    maxLines: 4,
                                     fontWeight: FontWeight.normal,
                                     textColor: const Color(0XFFFAFAFA),
                                   ),
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                                     child: TextWebWidget(
                                       AppLocalizations.of(context)!.homePage_ThirdIntroduction,
                                       fontSize: ScreenSizeHelper.sp(constraints, 25),
-                                      maxLines: 4,
+                                      maxLines: 8,
                                       fontWeight: FontWeight.normal,
                                       textColor: const Color(0XFFFAFAFA),
                                     ),
@@ -258,6 +257,7 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(height: ScreenSizeHelper.h(constraints, 8)),
                                   TextWebWidget(
                                     AppLocalizations.of(context)!.homePage_MyTools,
+                                    maxLines: 3,
                                     fontSize: ScreenSizeHelper.sp(constraints, 18),
                                     fontWeight: FontWeight.w100,
                                     textAlign: TextAlign.start,
@@ -271,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                                       itemCount: _controller.chatGptContentList.length,
                                       options: CarouselOptions(
                                         viewportFraction: 1 / 7,
-                                        height: ScreenSizeHelper.w(constraints, 10),
+                                        height: ScreenSizeHelper.w(constraints, 22),
                                         enlargeStrategy: CenterPageEnlargeStrategy.height,
                                         autoPlay: true,
                                         enableInfiniteScroll: true,

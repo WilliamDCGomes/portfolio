@@ -32,7 +32,7 @@ class DevToolsWidget extends StatelessWidget {
             ),
             child: Image.asset(
               toolImagePath,
-              width: ScreenSizeHelper.w(constraintType, 2),
+              width: ScreenSizeHelper.h(constraintType, 4.5),
               fit: BoxFit.fill,
             ),
           ),
@@ -41,7 +41,7 @@ class DevToolsWidget extends StatelessWidget {
             fontSize: ScreenSizeHelper.sp(constraintType, 14),
             fontWeight: FontWeight.w100,
             textAlign: TextAlign.center,
-            maxLines: 2,
+            maxLines: 6,
             textColor: const Color(0XFFFAFAFA),
           ),
         ],

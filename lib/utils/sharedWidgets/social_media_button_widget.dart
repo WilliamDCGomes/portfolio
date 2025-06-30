@@ -19,7 +19,7 @@ class SocialMediaButtonWidget extends StatelessWidget {
       onTap: onTap,
       child: Image.asset(
         imagePath,
-        height: ScreenSizeHelper.w(constraintType, 3),
+        height: ScreenSizeHelper.h(constraintType, 4.5),
       ),
     );
   }
