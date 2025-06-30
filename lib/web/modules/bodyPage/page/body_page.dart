@@ -1,0 +1,50 @@
+import 'package:get/get.dart';
+import 'package:web/web.dart' as web;
+import 'package:flutter/material.dart';
+import '../controller/body_controller.dart';
+import '../../homePage/page/home_page.dart';
+import '../../headerPage/page/header_page.dart';
+import '../../../../generated/l10n/app_localization.dart';
+
+class BodyPage extends StatefulWidget {
+  const BodyPage({super.key});
+
+  @override
+  State<BodyPage> createState() => _BodyPageState();
+}
+
+class _BodyPageState extends State<BodyPage> {
+  late BodyController _controller;
+
+  @override
+  void initState() {
+    _controller = Get.put(BodyController());
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    web.document.title = AppLocalizations.of(context)!.headerPage_TabHome;
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Material(
+          color: const Color(0XFF13131F),
+          child: GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: Stack(
+              children: [
+                HeaderPage(),
+                HomePage(),
+
+
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}

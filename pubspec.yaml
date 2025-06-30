@@ -1,0 +1,120 @@
+name: william_portifolio
+description: "My own personal website"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  get: ^4.7.2
+  web: ^1.1.1
+  http: ^1.4.0
+  intl: ^0.20.2
+  lottie: ^3.3.1
+  provider: ^6.1.5
+  flutter_svg: ^2.2.0
+  image_picker: ^1.1.2
+  universal_html: ^2.2.4
+  carousel_slider: ^5.1.1
+  cupertino_icons: ^1.0.8
+  json_annotation: ^4.9.0
+  responsive_sizer: ^3.3.1
+  easy_image_viewer: ^1.5.1
+  flutter_flavorizr: ^2.4.1
+  shared_preferences: ^2.5.3
+  flutter_localization: ^0.3.3
+  flutter_native_splash: ^2.4.6
+  flutter_launcher_icons: ^0.14.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  json_serializable: ^6.9.5
+
+# Rodar sempre que quiser gerar os arquivos .g
+# flutter pub run build_runner build --delete-conflicting-outputs
+
+# Rodar sempre que quiser atualizar a splashscreen
+# flutter clean
+# flutter pub get
+# flutter pub run flutter_native_splash:create
+
+flutter_native_splash:
+  color: "#121621"
+  color_dark: "#121621"
+  background_image: lib/app/assets/images/splash_screen.png
+  background_image_dark: lib/app/assets/images/splash_screen.png
+  image: lib/app/assets/images/app_icon.png
+  image_dark: lib/app/assets/images/app_icon.png
+
+  android_12:
+    color: "#121621"
+    color_dark: "#121621"
+
+  web: false
+
+# Rodar sempre que quiser atualizar o icone
+# flutter clean
+# flutter pub get
+# flutter pub run flutter_launcher_icons:main
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "lib/app/assets/images/app_icon.png"
+  adaptive_icon_background: "lib/app/assets/images/splash_screen.png"
+  adaptive_icon_foreground: "lib/app/assets/images/app_icon.png"
+
+# Rodar sempre que quiser adicionar o flavor
+# flutter clean
+# flutter pub get
+# flutter pub run flutter_flavorizr
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+      targets:
+        Runner:
+          bundleId: "com.williamdouglas.portifolio_william_douglas"
+  flavors:
+    dev:
+      app:
+        name: "Portifólio - William Douglas DEV"
+      android:
+        applicationId: "com.williamdouglas.portifolio_william_douglas_dev"
+      ios:
+        bundleId: "com.williamdouglas.portifolio_william_douglas_dev"
+    qa:
+      app:
+        name: "Portifólio - William Douglas QA"
+      android:
+        applicationId: "com.williamdouglas.portifolio_william_douglas_qa"
+      ios:
+        bundleId: "com.williamdouglas.portifolio_william_douglas_qa"
+    prod:
+      app:
+        name: "Portifólio - William Douglas"
+      android:
+        applicationId: "com.williamdouglas.portifolio_william_douglas"
+      ios:
+        bundleId: "com.williamdouglas.portifolio_william_douglas"
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - lib/app/assets/images/
+    - lib/app/assets/json/
+    - lib/app/assets/svgs/
+    - lib/web/assets/images/
+    - lib/web/assets/json/
+    - lib/web/assets/svgs/
