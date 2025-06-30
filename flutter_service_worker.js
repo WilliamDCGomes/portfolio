@@ -52,7 +52,7 @@ const RESOURCES = {"canvaskit/skwasm.wasm": "39dd80367a4e71582d234948adc521c0",
 "assets/lib/web/assets/images/image_profile.jpg": "4d0181695c99ab49317fe727fe764941",
 "assets/lib/web/assets/images/postgresql_icon.png": "ad6d4e2c3c5476ddd86132495815649a",
 "assets/lib/web/assets/images/azure_icon.png": "5ba7cc955d9b5e32daae978a90cbece9",
-"assets/lib/web/assets/images/aws_icon.png": "8765d9679aabf2d213b9043bbb3813e8",
+"assets/lib/web/assets/images/aws_icon.png": "5eb8b905543b57ca98cf4d1f15726863",
 "assets/lib/web/assets/images/brazil_flag.png": "a7fef007321c8398394424fcf564e1f9",
 "assets/lib/web/assets/images/youtube_icon.png": "ca6d67e60f758d352745329b283e8f32",
 "assets/lib/web/assets/images/sql_server_icon.png": "cffdb21910256fd6f767fc011779bf3d",
@@ -69,7 +69,7 @@ const RESOURCES = {"canvaskit/skwasm.wasm": "39dd80367a4e71582d234948adc521c0",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"flutter_bootstrap.js": "ad7daf66c0733e605282550842966b07",
+"flutter_bootstrap.js": "963da4a95b791d67cbfd85c61f7f378f",
 "version.json": "46d24ca199e2d2273af147fc86ab4b2c"};
 // The application shell files that are downloaded before a service worker can
 // start.
