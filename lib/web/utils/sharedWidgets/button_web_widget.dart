@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../stylePages/web_colors.dart';
 import '../helpers/screen_size_helper.dart';
-import '../../../utils/stylePages/app_colors.dart';
 import 'package:william_portifolio/web/utils/sharedWidgets/text_web_widget.dart';
 
 class ButtonWebWidget extends StatelessWidget {
@@ -48,10 +48,10 @@ class ButtonWebWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 2,
           padding: padding,
-          backgroundColor: backgroundColor ?? AppColors.secondDefaultColor,
+          backgroundColor: backgroundColor ?? WebColors.secondDefaultColor,
           side: BorderSide(
             width: ScreenSizeHelper.h(constraintType, .25),
-            color: borderColor ?? AppColors.secondDefaultColor,
+            color: borderColor ?? WebColors.secondDefaultColor,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radioButton ?? ScreenSizeHelper.h(constraintType, 1)),
@@ -59,7 +59,7 @@ class ButtonWebWidget extends StatelessWidget {
         ),
         child: child ?? TextWebWidget(
           hintText ?? "",
-          textColor: textColor ?? AppColors.whiteColor,
+          textColor: textColor ?? WebColors.whiteColor,
           fontSize: textSize ?? (
           MediaQuery.of(context).orientation == Orientation.portrait ?
           ScreenSizeHelper.sp(constraintType, 16) : ScreenSizeHelper.sp(constraintType, 13)),

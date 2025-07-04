@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../utils/stylePages/app_colors.dart';
+import '../stylePages/web_colors.dart';
 
 class TextWebWidget extends StatelessWidget {
   final String _text;
@@ -36,7 +36,7 @@ class TextWebWidget extends StatelessWidget {
       maxLines: maxLines,
       overflow: textOverflow ?? TextOverflow.ellipsis,
       style: TextStyle(
-        color: textColor ?? AppColors.whiteColor,
+        color: textColor ?? WebColors.whiteColor,
         backgroundColor: backgroundTextColor,
         fontSize: fontSize ?? 35,
         fontWeight: fontWeight ?? FontWeight.normal,

@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../controller/home_controller.dart';
 import '../../../../enums/social_media_enum.dart';
+import '../../../utils/stylePages/web_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
 import '../../../utils/helpers/screen_size_helper.dart';
@@ -9,11 +10,15 @@ import '../../../../generated/l10n/app_localization.dart';
 import '../../../utils/sharedWidgets/text_web_widget.dart';
 import '../../../utils/sharedWidgets/dev_tools_widget.dart';
 import '../../../utils/sharedWidgets/button_web_widget.dart';
-import '../../../utils/sharedWidgets/custom_scroll_widget.dart';
 import '../../../../utils/sharedWidgets/social_media_button_widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Object constraints;
+  
+  const HomePage({
+    super.key,
+    required this.constraints,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -30,316 +35,302 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: LayoutBuilder(
-          builder: (context, constraints) {
-            return SizedBox(
-              height: ScreenSizeHelper.h(constraints, 90),
-              child: ScrollConfiguration(
-                behavior: CustomScrollWidget(),
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [
-                    SizedBox(
-                      height: ScreenSizeHelper.fullH(constraints, 100, 550),
-                      child: Stack(
-                        children: [
-                          Center(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: ScreenSizeHelper.w(constraints, 10)),
-                              child: SizedBox(
-                                width: ScreenSizeHelper.w(constraints, 60),
-                                child: ListView(
-                                  shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  children: [
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 5)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_FirstIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 50),
-                                      maxLines: 4,
-                                      fontWeight: FontWeight.bold,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 1)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_SecondIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 30),
-                                      maxLines: 4,
-                                      fontWeight: FontWeight.normal,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 6)),
-                                    SizedBox(
-                                      width: ScreenSizeHelper.w(constraints, 60),
-                                      child: TextWebWidget(
-                                        AppLocalizations.of(context)!.homePage_ThirdIntroduction,
-                                        fontSize: ScreenSizeHelper.sp(constraints, 25),
-                                        maxLines: 8,
-                                        fontWeight: FontWeight.normal,
-                                        textColor: const Color(0XFFFAFAFA),
-                                      ),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 6)),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Expanded(
-                                          child: SizedBox(),
-                                        ),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.instagramIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.instagram),
-                                        ),
-                                        SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.youtubeIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.youtube),
-                                        ),
-                                        SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.tiktokIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.tiktok),
-                                        ),
-                                        SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.linkedinIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.linkedin),
-                                        ),
-                                        SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.githubIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.github),
-                                        ),
-                                        SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
-                                        SocialMediaButtonWidget(
-                                          constraintType: constraints,
-                                          imagePath: WebPathsHelper.gmailIcon,
-                                          onTap: () => _controller.openSocialMedia(SocialMediaEnum.gmail),
-                                        ),
-                                        Expanded(
-                                          child: SizedBox(),
-                                        ),
-                                      ],
-                                    ),
-                                    Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: ScreenSizeHelper.h(constraints, 15)),
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            TextWebWidget(
-                                              AppLocalizations.of(context)!.homePage_Scroll,
-                                              fontSize: ScreenSizeHelper.sp(constraints, 15),
-                                              maxLines: 3,
-                                              fontWeight: FontWeight.w400,
-                                              textColor: const Color(0XFFFAFAFA),
-                                            ),
-                                            const Icon(
-                                              Icons.arrow_downward_outlined,
-                                              color: Color(0XFFFAFAFA),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+    return Column(
+      children: [
+        SizedBox(
+          height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
+          child: Stack(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: ScreenSizeHelper.w(widget.constraints, 10)),
+                  child: SizedBox(
+                    width: ScreenSizeHelper.w(widget.constraints, 60),
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 5)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_FirstIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 50),
+                          maxLines: 4,
+                          fontWeight: FontWeight.bold,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 1)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_SecondIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 30),
+                          maxLines: 4,
+                          fontWeight: FontWeight.normal,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 6)),
+                        SizedBox(
+                          width: ScreenSizeHelper.w(widget.constraints, 60),
+                          child: TextWebWidget(
+                            AppLocalizations.of(context)!.homePage_ThirdIntroduction,
+                            fontSize: ScreenSizeHelper.sp(widget.constraints, 25),
+                            maxLines: 8,
+                            fontWeight: FontWeight.normal,
+                            textColor: WebColors.textWebColor,
                           ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: ScreenSizeHelper.fullH(constraints, 100, 550),
-                      child: Container(
-                        color: Color(0XFF0D0E1B),
-                        child: Stack(
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 6)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Column(
-                              spacing: 0,
-                              children: [
-                                Container(
-                                  color: Color(0XFF0D0E1B),
-                                  height: ScreenSizeHelper.h(constraints, 50),
-                                ),
-                                Container(
-                                  color: Color(0XFF030712),
-                                  height: ScreenSizeHelper.h(constraints, 50),
-                                ),
-                              ],
+                            Expanded(
+                              child: SizedBox(),
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: ScreenSizeHelper.h(constraints, 3),
-                                horizontal: ScreenSizeHelper.w(constraints, 5),
-                              ),
-                              child: SizedBox(
-                                width: ScreenSizeHelper.w(constraints, 40),
-                                child: ListView(
-                                  shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  children: [
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_SecondPart_FirstIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 30),
-                                      maxLines: 2,
-                                      fontWeight: FontWeight.normal,
-                                      textAlign: TextAlign.start,
-                                      textColor: const Color(0XFF2377B5),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 2)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_SecondPart_SecondIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 20),
-                                      maxLines: 4,
-                                      fontWeight: FontWeight.normal,
-                                      textAlign: TextAlign.start,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 4)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_SecondPart_ThirdIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 18),
-                                      maxLines: 12,
-                                      fontWeight: FontWeight.w100,
-                                      textAlign: TextAlign.start,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 2)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_SecondPart_FourthIntroduction,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 18),
-                                      maxLines: 2,
-                                      fontWeight: FontWeight.w100,
-                                      textAlign: TextAlign.start,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 3)),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: ButtonWebWidget(
-                                        constraintType: constraints,
-                                        backgroundColor: const Color(0XFF2377B5),
-                                        borderColor: const Color(0XFF2377B5),
-                                        padding: EdgeInsets.zero,
-                                        widthButton: ScreenSizeHelper.w(constraints, 10),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Image.asset(
-                                              WebPathsHelper.resumeIcon,
-                                              height: ScreenSizeHelper.w(constraints, 1.5),
-                                            ),
-                                            SizedBox(
-                                              width: ScreenSizeHelper.w(constraints, .5),
-                                            ),
-                                            TextWebWidget(
-                                              AppLocalizations.of(context)!.homePage_Resume,
-                                              fontSize: ScreenSizeHelper.w(constraints, 1),
-                                              maxLines: 2,
-                                              fontWeight: FontWeight.w100,
-                                              textAlign: TextAlign.start,
-                                              textColor: const Color(0XFFFAFAFA),
-                                            ),
-                                          ],
-                                        ),
-                                        onPressed: () {
-
-                                        },
-                                      ),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 8)),
-                                    TextWebWidget(
-                                      AppLocalizations.of(context)!.homePage_MyTools,
-                                      maxLines: 3,
-                                      fontSize: ScreenSizeHelper.sp(constraints, 18),
-                                      fontWeight: FontWeight.w100,
-                                      textAlign: TextAlign.start,
-                                      textColor: const Color(0XFFFAFAFA),
-                                    ),
-                                    SizedBox(height: ScreenSizeHelper.h(constraints, 2)),
-                                    SizedBox(
-                                      width: ScreenSizeHelper.w(constraints, 50),
-                                      child: CarouselSlider.builder(
-                                        carouselController: _controller.carouselController,
-                                        itemCount: _controller.chatGptContentList.length,
-                                        options: CarouselOptions(
-                                          viewportFraction: 1 / 7,
-                                          height: ScreenSizeHelper.w(constraints, 22),
-                                          enlargeStrategy: CenterPageEnlargeStrategy.height,
-                                          autoPlay: true,
-                                          enableInfiniteScroll: true,
-                                          autoPlayInterval: const Duration(seconds: 2),
-                                          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                                        ),
-                                        itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
-                                          return DevToolsWidget(
-                                            toolName: _controller.chatGptContentList[itemIndex].toolName,
-                                            toolImagePath: _controller.chatGptContentList[itemIndex].toolImagePath,
-                                            constraintType: constraints,
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.instagramIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.instagram),
                             ),
-                            Align(
-                              alignment: Alignment.topRight,
-                              child: Container(
-                                width: ScreenSizeHelper.w(constraints, 34),
-                                padding: EdgeInsets.symmetric(
-                                  vertical: ScreenSizeHelper.w(constraints, 3),
-                                  horizontal: ScreenSizeHelper.w(constraints, 5),
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.topRight,
-                                      child: Container(
-                                        color: const Color(0XFF2377B5),
-                                        height: ScreenSizeHelper.w(constraints, 25),
-                                        width: ScreenSizeHelper.w(constraints, 18.75),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment.topRight,
-                                      child: Container(
-                                        margin: EdgeInsets.only(
-                                          top: ScreenSizeHelper.w(constraints, 1),
-                                          right: ScreenSizeHelper.w(constraints, 1),
-                                        ),
-                                        child: Image.asset(
-                                          WebPathsHelper.imageProfile,
-                                          height: ScreenSizeHelper.w(constraints, 25),
-                                          width: ScreenSizeHelper.w(constraints, 18.75),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.youtubeIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.youtube),
+                            ),
+                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.tiktokIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.tiktok),
+                            ),
+                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.linkedinIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.linkedin),
+                            ),
+                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.githubIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.github),
+                            ),
+                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                            SocialMediaButtonWidget(
+                              constraintType: widget.constraints,
+                              imagePath: WebPathsHelper.gmailIcon,
+                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.gmail),
+                            ),
+                            Expanded(
+                              child: SizedBox(),
                             ),
                           ],
                         ),
-                      ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: ScreenSizeHelper.h(widget.constraints, 15)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                TextWebWidget(
+                                  AppLocalizations.of(context)!.homePage_Scroll,
+                                  fontSize: ScreenSizeHelper.sp(widget.constraints, 15),
+                                  maxLines: 3,
+                                  fontWeight: FontWeight.w400,
+                                  textColor: WebColors.textWebColor,
+                                ),
+                                const Icon(
+                                  Icons.arrow_downward_outlined,
+                                  color: WebColors.textWebColor,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
+          child: Container(
+            color: WebColors.secondBackgroundColor,
+            child: Stack(
+              children: [
+                Column(
+                  spacing: 0,
+                  children: [
+                    Container(
+                      color: WebColors.secondBackgroundColor,
+                      height: ScreenSizeHelper.h(widget.constraints, 50),
+                    ),
+                    Container(
+                      color: WebColors.thirdBackgroundColor,
+                      height: ScreenSizeHelper.h(widget.constraints, 50),
                     ),
                   ],
                 ),
-              ),
-            );
-          }
-      ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenSizeHelper.h(widget.constraints, 3),
+                    horizontal: ScreenSizeHelper.w(widget.constraints, 5),
+                  ),
+                  child: SizedBox(
+                    width: ScreenSizeHelper.w(widget.constraints, 40),
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_SecondPart_FirstIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 30),
+                          maxLines: 2,
+                          fontWeight: FontWeight.normal,
+                          textAlign: TextAlign.start,
+                          textColor: WebColors.blueWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_SecondPart_SecondIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 20),
+                          maxLines: 4,
+                          fontWeight: FontWeight.normal,
+                          textAlign: TextAlign.start,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_SecondPart_ThirdIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                          maxLines: 12,
+                          fontWeight: FontWeight.w100,
+                          textAlign: TextAlign.start,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_SecondPart_FourthIntroduction,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                          maxLines: 4,
+                          fontWeight: FontWeight.w100,
+                          textAlign: TextAlign.start,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 3)),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: ButtonWebWidget(
+                            constraintType: widget.constraints,
+                            backgroundColor: WebColors.blueWebColor,
+                            borderColor: WebColors.blueWebColor,
+                            padding: EdgeInsets.symmetric(vertical: ScreenSizeHelper.w(widget.constraints, .5)),
+                            widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  WebPathsHelper.resumeIcon,
+                                  height: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                                ),
+                                SizedBox(
+                                  width: ScreenSizeHelper.w(widget.constraints, .5),
+                                ),
+                                TextWebWidget(
+                                  AppLocalizations.of(context)!.homePage_Resume,
+                                  fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                                  maxLines: 2,
+                                  fontWeight: FontWeight.w100,
+                                  textAlign: TextAlign.start,
+                                  textColor: WebColors.textWebColor,
+                                ),
+                              ],
+                            ),
+                            onPressed: () {
+
+                            },
+                          ),
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 8)),
+                        TextWebWidget(
+                          AppLocalizations.of(context)!.homePage_MyTools,
+                          maxLines: 3,
+                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                          fontWeight: FontWeight.w100,
+                          textAlign: TextAlign.start,
+                          textColor: WebColors.textWebColor,
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                        SizedBox(
+                          width: ScreenSizeHelper.myToolsWidth(widget.constraints, 50),
+                          child: CarouselSlider.builder(
+                            carouselController: _controller.carouselController,
+                            itemCount: _controller.chatGptContentList.length,
+                            options: CarouselOptions(
+                              viewportFraction: ScreenSizeHelper.myToolsIconsShowing(widget.constraints, 22),
+                              height: ScreenSizeHelper.myToolsIconWidth(widget.constraints, 22),
+                              enlargeStrategy: CenterPageEnlargeStrategy.height,
+                              autoPlay: true,
+                              enableInfiniteScroll: true,
+                              autoPlayInterval: const Duration(seconds: 2),
+                              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                            ),
+                            itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+                              return DevToolsWidget(
+                                toolName: _controller.chatGptContentList[itemIndex].toolName,
+                                toolImagePath: _controller.chatGptContentList[itemIndex].toolImagePath,
+                                constraintType: widget.constraints,
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: ScreenSizeHelper.w(widget.constraints, 34),
+                    padding: EdgeInsets.symmetric(
+                      vertical: ScreenSizeHelper.w(widget.constraints, 3),
+                      horizontal: ScreenSizeHelper.w(widget.constraints, 5),
+                    ),
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            color: WebColors.blueWebColor,
+                            height: ScreenSizeHelper.w(widget.constraints, 25),
+                            width: ScreenSizeHelper.w(widget.constraints, 18.75),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: ScreenSizeHelper.w(widget.constraints, 1),
+                              right: ScreenSizeHelper.w(widget.constraints, 1),
+                            ),
+                            child: Image.asset(
+                              WebPathsHelper.imageProfile,
+                              height: ScreenSizeHelper.w(widget.constraints, 25),
+                              width: ScreenSizeHelper.w(widget.constraints, 18.75),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

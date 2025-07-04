@@ -77,7 +77,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get homePage_SecondPart_SecondIntroduction =>
-      'Sinta-se a vontade para conhecer um pouco mais so meu trabalho!';
+      'Sinta-se a vontade para conhecer um pouco mais do meu trabalho!';
 
   @override
   String get homePage_SecondPart_ThirdIntroduction =>

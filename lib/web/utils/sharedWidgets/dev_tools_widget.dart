@@ -1,5 +1,6 @@
 import 'text_web_widget.dart';
 import 'package:flutter/material.dart';
+import '../stylePages/web_colors.dart';
 import '../helpers/screen_size_helper.dart';
 
 class DevToolsWidget extends StatelessWidget {
@@ -17,7 +18,8 @@ class DevToolsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: ScreenSizeHelper.w(constraintType, 4),
+      height: ScreenSizeHelper.myToolsIconWidth(constraintType, 4),
+      width: ScreenSizeHelper.myToolsIconWidth(constraintType, 4),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,14 +28,15 @@ class DevToolsWidget extends StatelessWidget {
             padding: EdgeInsets.all(ScreenSizeHelper.w(constraintType, .5)),
             margin: EdgeInsets.only(bottom: ScreenSizeHelper.w(constraintType, .5)),
             decoration: BoxDecoration(
-              color: const Color(0XFF1A1A30),
+              color: WebColors.backgroundToolItemColor,
               borderRadius: BorderRadius.circular(ScreenSizeHelper.w(constraintType, .5)),
 
             ),
             child: Image.asset(
               toolImagePath,
+              height: ScreenSizeHelper.h(constraintType, 4.5),
               width: ScreenSizeHelper.h(constraintType, 4.5),
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
             ),
           ),
           TextWebWidget(
@@ -42,7 +45,7 @@ class DevToolsWidget extends StatelessWidget {
             fontWeight: FontWeight.w100,
             textAlign: TextAlign.center,
             maxLines: 6,
-            textColor: const Color(0XFFFAFAFA),
+            textColor: WebColors.textWebColor,
           ),
         ],
       ),

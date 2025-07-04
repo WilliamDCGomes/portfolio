@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../controller/header_controller.dart';
-import 'package:universal_html/html.dart' as web;
 import '../../../utils/helpers/web_paths_helper.dart';
 import '../../../utils/helpers/screen_size_helper.dart';
 import '../../../../generated/l10n/app_localization.dart';
 import '../../../utils/sharedWidgets/text_web_widget.dart';
+import 'package:william_portifolio/web/utils/stylePages/web_colors.dart';
 
 class HeaderPage extends StatefulWidget {
   const HeaderPage({super.key});
@@ -32,7 +32,7 @@ class _HeaderPageState extends State<HeaderPage> {
             child: Stack(
               children: [
                 Container(
-                  color: const Color(0XFF13131F),
+                  color: WebColors.backgroundColor,
                   height: constraints.maxHeight,
                   width: constraints.maxWidth,
                 ),
@@ -83,25 +83,25 @@ class _HeaderPageState extends State<HeaderPage> {
                                 TextWebWidget(
                                   AppLocalizations.of(context)!.headerPage_TabHome,
                                   fontSize: ScreenSizeHelper.sp(constraints, 12),
-                                  textColor: const Color(0XFFFAFAFA),
+                                  textColor: WebColors.textWebColor,
                                 ),
                                 SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
                                 TextWebWidget(
                                   AppLocalizations.of(context)!.headerPage_TabExperience,
                                   fontSize: ScreenSizeHelper.sp(constraints, 12),
-                                  textColor: const Color(0XFFFAFAFA),
+                                  textColor: WebColors.textWebColor,
                                 ),
                                 SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
                                 TextWebWidget(
                                   AppLocalizations.of(context)!.headerPage_TabProject,
                                   fontSize: ScreenSizeHelper.sp(constraints, 12),
-                                  textColor: const Color(0XFFFAFAFA),
+                                  textColor: WebColors.textWebColor,
                                 ),
                                 SizedBox(width: ScreenSizeHelper.w(constraints, 2)),
                                 TextWebWidget(
                                   AppLocalizations.of(context)!.headerPage_TabEducation,
                                   fontSize: ScreenSizeHelper.sp(constraints, 12),
-                                  textColor: const Color(0XFFFAFAFA),
+                                  textColor: WebColors.textWebColor,
                                 ),
                               ],
                             ),
@@ -112,7 +112,7 @@ class _HeaderPageState extends State<HeaderPage> {
                                 Image.asset(WebPathsHelper.brazilFlag),
                                 Icon(
                                   Icons.arrow_drop_down,
-                                  color: const Color(0XFFFAFAFA),
+                                  color: WebColors.textWebColor,
                                   size: ScreenSizeHelper.h(constraints, 3),
                                 ),
                               ],

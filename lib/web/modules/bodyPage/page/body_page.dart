@@ -3,8 +3,11 @@ import 'package:web/web.dart' as web;
 import 'package:flutter/material.dart';
 import '../controller/body_controller.dart';
 import '../../homePage/page/home_page.dart';
+import '../widget/body_children_widget.dart';
 import '../../headerPage/page/header_page.dart';
+import '../../projectPage/page/project_page.dart';
 import '../../../../generated/l10n/app_localization.dart';
+import 'package:william_portifolio/web/utils/stylePages/web_colors.dart';
 
 class BodyPage extends StatefulWidget {
   const BodyPage({super.key});
@@ -29,7 +32,7 @@ class _BodyPageState extends State<BodyPage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Material(
-          color: const Color(0XFF13131F),
+          color: WebColors.backgroundColor,
           child: GestureDetector(
             onTap: () {
               FocusScope.of(context).unfocus();
@@ -37,9 +40,16 @@ class _BodyPageState extends State<BodyPage> {
             child: Stack(
               children: [
                 HeaderPage(),
-                HomePage(),
-
-
+                BodyChildrenWidget(
+                  childrenWidget: [
+                    HomePage(
+                      constraints: constraints,
+                    ),
+                    ProjectPage(
+                      constraints: constraints,
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
