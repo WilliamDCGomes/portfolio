@@ -21,8 +21,9 @@ class _BodyChildrenWidgetState extends State<BodyChildrenWidget> {
       alignment: Alignment.bottomCenter,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          return SizedBox(
+          return Container(
             height: ScreenSizeHelper.h(constraints, 96),
+            padding: EdgeInsets.only(top: ScreenSizeHelper.h(constraints, 4)),
             child: ScrollConfiguration(
               behavior: CustomScrollWidget(),
               child: ListView(
