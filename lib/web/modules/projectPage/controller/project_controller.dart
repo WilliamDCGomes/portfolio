@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../../../base/models/project.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
 
 class ProjectController extends GetxController {
   final Object constraints;
   late List<Project> projects;
+  late ScrollController listViewController;
 
   ProjectController(this.constraints) {
     projects = <Project> [
@@ -113,5 +115,16 @@ class ProjectController extends GetxController {
         ],
       ),
     ];
+
+    listViewController = ScrollController();
+  }
+
+  void handleNotification(ScrollNotification n) {
+    if (n is OverscrollNotification) {
+      final primary = PrimaryScrollController.of(Get.context!);
+      if (primary.hasClients) {
+        primary.position.moveTo(primary.position.pixels + n.overscroll);
+      }
+    }
   }
 }

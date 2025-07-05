@@ -28,6 +28,7 @@ class _BodyChildrenWidgetState extends State<BodyChildrenWidget> {
               behavior: CustomScrollWidget(),
               child: ListView(
                 shrinkWrap: true,
+                primary: true,
                 children: widget.childrenWidget,
               ),
             ),

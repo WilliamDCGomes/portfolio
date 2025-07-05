@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.start,
                         textColor: WebColors.textWebColor,
                       ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
                       TextWebWidget(
                         AppLocalizations.of(context)!.homePage_SecondPart_ThirdIntroduction,
                         fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
