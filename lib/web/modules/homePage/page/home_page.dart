@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: ScreenSizeHelper.w(widget.constraints, 10)),
                   child: SizedBox(
-                    width: ScreenSizeHelper.w(widget.constraints, 60),
+                    width: ScreenSizeHelper.w(widget.constraints, 65),
                     child: ListView(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
@@ -252,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                           },
                         ),
                       ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 8)),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 7)),
                       TextWebWidget(
                         AppLocalizations.of(context)!.homePage_MyTools,
                         maxLines: 3,
