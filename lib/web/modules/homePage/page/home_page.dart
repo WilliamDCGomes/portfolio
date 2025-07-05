@@ -252,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                           },
                         ),
                       ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 7)),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 5)),
                       TextWebWidget(
                         AppLocalizations.of(context)!.homePage_MyTools,
                         maxLines: 3,
