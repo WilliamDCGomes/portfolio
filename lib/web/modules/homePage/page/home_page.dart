@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                   horizontal: ScreenSizeHelper.w(widget.constraints, 5),
                 ),
                 child: SizedBox(
-                  width: ScreenSizeHelper.w(widget.constraints, 25),
+                  width: ScreenSizeHelper.w(widget.constraints, 45),
                   child: ListView(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -292,7 +292,7 @@ class _HomePageState extends State<HomePage> {
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
-                  width: ScreenSizeHelper.w(widget.constraints, 34),
+                  width: ScreenSizeHelper.w(widget.constraints, 40),
                   padding: EdgeInsets.symmetric(
                     vertical: ScreenSizeHelper.w(widget.constraints, 3),
                     horizontal: ScreenSizeHelper.w(widget.constraints, 5),
@@ -303,8 +303,8 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.topRight,
                         child: Container(
                           color: WebColors.blueWebColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 25),
-                          width: ScreenSizeHelper.w(widget.constraints, 18.75),
+                          height: ScreenSizeHelper.w(widget.constraints, 30),
+                          width: ScreenSizeHelper.w(widget.constraints, 22.5),
                         ),
                       ),
                       Align(
@@ -316,8 +316,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: Image.asset(
                             WebPathsHelper.imageProfile,
-                            height: ScreenSizeHelper.w(widget.constraints, 25),
-                            width: ScreenSizeHelper.w(widget.constraints, 18.75),
+                            height: ScreenSizeHelper.w(widget.constraints, 30),
+                            width: ScreenSizeHelper.w(widget.constraints, 22.5),
                           ),
                         ),
                       ),
