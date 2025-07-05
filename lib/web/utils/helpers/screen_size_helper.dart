@@ -2,13 +2,26 @@ import 'dart:math' as math;
 
 class ScreenSizeHelper{
   static double w(constraints, double percent) => constraints.maxWidth * percent / 100;
+  static double buttonH(constraints, double percent) {
+    double width = constraints.maxWidth * percent / 100;
+
+    if(width < 35) {
+      return 35;
+    }
+    else if(width > 100) {
+      return 100;
+    }
+    return width;
+  }
   static double buttonW(constraints, double percent) {
     double width = constraints.maxWidth * percent / 100;
 
     if(width < 100) {
       return 100;
     }
-
+    else if(width > 150) {
+      return 150;
+    }
     return width;
   }
   static double buttonText(constraints, double percent) {
@@ -16,6 +29,9 @@ class ScreenSizeHelper{
 
     if(width < 10) {
       return 10;
+    }
+    else if(width > 15) {
+      return 15;
     }
 
     return width;
@@ -25,6 +41,9 @@ class ScreenSizeHelper{
 
     if(width < 12) {
       return 12;
+    }
+    else if(width > 17) {
+      return 17;
     }
 
     return width;
@@ -39,7 +58,7 @@ class ScreenSizeHelper{
     return width;
   }
   static double myToolsIconWidth(constraints, double percent) {
-    double width = constraints.maxWidth * percent / 100;
+    double width = w(constraints, 10);
 
     if(width < 300) {
       return 300;
@@ -60,6 +79,24 @@ class ScreenSizeHelper{
       return 1 / 7;
     }
     return 1 / 9;
+  }
+  static double projectIconsWidth(constraints, double percent) {
+    double width = w(constraints, 10);
+
+    if(width > 1900) {
+      return 1900;
+    }
+
+    return width;
+  }
+  static double projectIconsHalfWidth(constraints, double percent) {
+    double width = w(constraints, 10);
+
+    if(width > 950) {
+      return 950;
+    }
+
+    return width;
   }
   static double h(constraints, double percent) => constraints.maxHeight * percent / 100;
   static double fullH(constraints, double percent, double minPx) => math.max(ScreenSizeHelper.h(constraints, percent), minPx);

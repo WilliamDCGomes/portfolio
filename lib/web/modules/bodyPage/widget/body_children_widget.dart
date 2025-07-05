@@ -22,7 +22,7 @@ class _BodyChildrenWidgetState extends State<BodyChildrenWidget> {
       child: LayoutBuilder(
         builder: (context, constraints) {
           return SizedBox(
-            height: ScreenSizeHelper.h(constraints, 90),
+            height: ScreenSizeHelper.h(constraints, 96),
             child: ScrollConfiguration(
               behavior: CustomScrollWidget(),
               child: ListView(

@@ -9,7 +9,7 @@ class HomeController extends GetxController {
   late List<ChatGptContent> chatGptContentList;
   late CarouselSliderController carouselController;
 
-  HomeController(){
+  HomeController() {
     carouselController = CarouselSliderController();
     chatGptContentList = <ChatGptContent>[
       ChatGptContent(

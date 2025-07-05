@@ -20,5 +20,6 @@ class WebColors {
   static const Color textWebColor = Color(0XFFFAFAFA);
   static const Color blueWebColor = Color(0XFF2377B5);
   static const Color backgroundToolItemColor = Color(0XFF1A1A30);
-  static const Color backgroundProjectTagColor = Color(0XFF374151);
+  static const Color backgroundProjectColor = Color(0XFF374151);
+  static const Color secondBackgroundProjectColor = Color(0XFF1F2937);
 }

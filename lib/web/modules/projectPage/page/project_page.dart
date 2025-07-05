@@ -1,15 +1,19 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import '../widget/project_card_widget.dart';
 import '../controller/project_controller.dart';
 import '../../../utils/helpers/screen_size_helper.dart';
+import '../../../utils/sharedWidgets/button_web_widget.dart';
 import 'package:william_portifolio/web/utils/stylePages/web_colors.dart';
 import 'package:william_portifolio/web/utils/sharedWidgets/text_web_widget.dart';
 
 class ProjectPage extends StatefulWidget {
+  final bool allowScroll;
   final Object constraints;
 
   const ProjectPage({
     super.key,
+    required this.allowScroll,
     required this.constraints,
   });
 
@@ -22,7 +26,7 @@ class _ProjectPageState extends State<ProjectPage> {
 
   @override
   void initState() {
-    _controller = Get.put(ProjectController());
+    _controller = Get.put(ProjectController(widget.constraints));
     super.initState();
   }
 
@@ -31,13 +35,19 @@ class _ProjectPageState extends State<ProjectPage> {
     return Container(
       height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
       width: ScreenSizeHelper.fullW(widget.constraints, 100, 550),
+      padding: EdgeInsets.symmetric(
+        horizontal: ScreenSizeHelper.w(widget.constraints, 5),
+      ),
       color: WebColors.thirdBackgroundColor,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(ScreenSizeHelper.w(widget.constraints, 1)),
+            padding: EdgeInsets.symmetric(
+                vertical: ScreenSizeHelper.w(widget.constraints, .6),
+                horizontal: ScreenSizeHelper.w(widget.constraints, 1),
+            ),
             decoration: BoxDecoration(
-              color: WebColors.backgroundProjectTagColor,
+              color: WebColors.backgroundProjectColor,
               borderRadius: BorderRadius.all(Radius.circular(ScreenSizeHelper.w(widget.constraints, 1))),
             ),
             child: TextWebWidget(
@@ -52,8 +62,76 @@ class _ProjectPageState extends State<ProjectPage> {
             maxLines: 3,
             fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
             fontWeight: FontWeight.w100,
-            textAlign: TextAlign.start,
+            textAlign: TextAlign.center,
             textColor: WebColors.textWebColor,
+          ),
+          SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+          SizedBox(
+            height: ScreenSizeHelper.fullH(widget.constraints, 80, 550),
+            child: ListView.builder(
+              key: UniqueKey(),
+              physics: widget.allowScroll ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+              itemCount: _controller.projects.length,
+              itemBuilder: (BuildContext context, int index) {
+                var item = _controller.projects[index];
+
+                return item.title != _controller.projects.last.title ? ProjectCardWidget(
+                  even: index % 2 == 0,
+                  title: item.title,
+                  description: item.description,
+                  imagesPath: item.imagesPath,
+                  toolsList: item.toolsList,
+                  constraints: widget.constraints,
+                ) : Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ProjectCardWidget(
+                      even: index % 2 == 0,
+                      title: item.title,
+                      description: item.description,
+                      imagesPath: item.imagesPath,
+                      toolsList: item.toolsList,
+                      constraints: widget.constraints,
+                    ),
+                    SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                    ButtonWebWidget(
+                      constraintType: widget.constraints,
+                      backgroundColor: WebColors.blueWebColor,
+                      borderColor: WebColors.blueWebColor,
+                      padding: EdgeInsets.zero,
+                      heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
+                      widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: WebColors.textWebColor,
+                            size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                          ),
+                          SizedBox(
+                            width: ScreenSizeHelper.w(widget.constraints, .5),
+                          ),
+                          TextWebWidget(
+                            "Ver Todos",
+                            fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                            maxLines: 2,
+                            fontWeight: FontWeight.w100,
+                            textAlign: TextAlign.start,
+                            textColor: WebColors.textWebColor,
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+
+                      },
+                    ),
+                    SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),

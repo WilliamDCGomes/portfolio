@@ -2,6 +2,7 @@ class WebPathsHelper{
   static const String jsonPath = "lib/web/assets/json/";
   static const String svgsPath = "lib/web/assets/svgs/";
   static const String imagesPath = "lib/web/assets/images/";
+  static const String projectsImagesPath = "lib/web/assets/images/projects/";
 
   static const String homeBackgroundTop = "${imagesPath}home_background_top.png";
   static const String homeBackgroundBottom = "${imagesPath}home_background_bottom.png";
@@ -36,5 +37,53 @@ class WebPathsHelper{
   static const String awsIcon = "${imagesPath}aws_icon.png";
   static const String powerAutomateIcon = "${imagesPath}power_automate_icon.png";
   static const String imageProfile = "${imagesPath}image_profile.jpg";
+  static const String samsungScreen = "${imagesPath}samsung_screen.png";
+  static const String iPhoneScreen = "${imagesPath}iphone_screen.png";
 
+
+
+  //elephant
+  static const String firstElephant = "${projectsImagesPath}elephant/1.png";
+  static const String secondElephant = "${projectsImagesPath}elephant/2.png";
+  static const String thirdElephant = "${projectsImagesPath}elephant/3.png";
+  static const String fourthElephant = "${projectsImagesPath}elephant/4.png";
+  static const String fifthElephant = "${projectsImagesPath}elephant/5.png";
+
+  //japamix
+  static const String firstJapamix = "${projectsImagesPath}japamix/1.png";
+  static const String secondJapamix = "${projectsImagesPath}japamix/2.png";
+  static const String thirdJapamix = "${projectsImagesPath}japamix/3.png";
+  static const String fourthJapamix = "${projectsImagesPath}japamix/4.png";
+
+  //pce
+  static const String firstPce = "${projectsImagesPath}pce/1.png";
+  static const String secondPce = "${projectsImagesPath}pce/2.png";
+  static const String thirdPce = "${projectsImagesPath}pce/3.png";
+  static const String fourthPce = "${projectsImagesPath}pce/4.png";
+  static const String fifthPce = "${projectsImagesPath}pce/5.png";
+  static const String sixthPce = "${projectsImagesPath}pce/6.png";
+  static const String seventhPce = "${projectsImagesPath}pce/7.png";
+  static const String eighthPce = "${projectsImagesPath}pce/8.png";
+  static const String ninthPce = "${projectsImagesPath}pce/9.png";
+
+  //smvc
+  static const String firstSmvc = "${projectsImagesPath}smvc/1.png";
+  static const String secondSmvc = "${projectsImagesPath}smvc/2.png";
+  static const String thirdSmvc = "${projectsImagesPath}smvc/3.png";
+  static const String fourthSmvc = "${projectsImagesPath}smvc/4.png";
+  static const String fifthSmvc = "${projectsImagesPath}smvc/5.png";
+  static const String sixthSmvc = "${projectsImagesPath}smvc/6.png";
+  static const String seventhSmvc = "${projectsImagesPath}smvc/7.png";
+  static const String eighthSmvc = "${projectsImagesPath}smvc/8.png";
+  static const String ninthSmvc = "${projectsImagesPath}smvc/9.png";
+
+  //zipartner
+  static const String firstZiPartner = "${projectsImagesPath}zipartner/1.png";
+  static const String secondZiPartner = "${projectsImagesPath}zipartner/2.png";
+  static const String thirdZiPartner = "${projectsImagesPath}zipartner/3.png";
+  static const String fourthZiPartner = "${projectsImagesPath}zipartner/4.png";
+  static const String fifthZiPartner = "${projectsImagesPath}zipartner/5.png";
+  static const String sixthZiPartner = "${projectsImagesPath}zipartner/6.png";
+  static const String seventhZiPartner = "${projectsImagesPath}zipartner/7.png";
+  static const String eighthZiPartner = "${projectsImagesPath}zipartner/8.png";
 }

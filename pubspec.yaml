@@ -29,6 +29,7 @@ dependencies:
   shared_preferences: ^2.5.3
   flutter_localization: ^0.3.3
   flutter_native_splash: ^2.4.6
+  visibility_detector: ^0.4.0+2
   flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
@@ -116,5 +117,10 @@ flutter:
     - lib/app/assets/json/
     - lib/app/assets/svgs/
     - lib/web/assets/images/
+    - lib/web/assets/images/projects/elephant/
+    - lib/web/assets/images/projects/japamix/
+    - lib/web/assets/images/projects/pce/
+    - lib/web/assets/images/projects/smvc/
+    - lib/web/assets/images/projects/zipartner/
     - lib/web/assets/json/
     - lib/web/assets/svgs/
