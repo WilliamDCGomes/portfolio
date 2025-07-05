@@ -155,8 +155,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Container(
-          color: WebColors.secondBackgroundColor,
-          height: ScreenSizeHelper.fullH(widget.constraints, 90, 550),
+          color: WebColors.thirdBackgroundColor,
+          height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
           child: Stack(
             children: [
               Column(
