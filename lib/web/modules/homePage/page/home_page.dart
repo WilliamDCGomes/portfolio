@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: Padding(
-                            padding: EdgeInsets.only(top: ScreenSizeHelper.h(widget.constraints, 15)),
+                            padding: EdgeInsets.only(top: ScreenSizeHelper.h(widget.constraints, 12)),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                   horizontal: ScreenSizeHelper.w(widget.constraints, 5),
                 ),
                 child: SizedBox(
-                  width: ScreenSizeHelper.w(widget.constraints, 40),
+                  width: ScreenSizeHelper.w(widget.constraints, 25),
                   child: ListView(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),

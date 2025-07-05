@@ -5,7 +5,6 @@ class ScreenSizeHelper{
   static double logoW(constraints, double percent) {
     double width = constraints.maxWidth * percent / 100;
 
-    print(width);
     if(width > 50) {
       return 50;
     }
