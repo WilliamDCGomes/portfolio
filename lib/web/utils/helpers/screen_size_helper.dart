@@ -2,6 +2,15 @@ import 'dart:math' as math;
 
 class ScreenSizeHelper{
   static double w(constraints, double percent) => constraints.maxWidth * percent / 100;
+  static double logoW(constraints, double percent) {
+    double width = constraints.maxWidth * percent / 100;
+
+    print(width);
+    if(width > 50) {
+      return 50;
+    }
+    return width;
+  }
   static double buttonH(constraints, double percent) {
     double width = constraints.maxWidth * percent / 100;
 

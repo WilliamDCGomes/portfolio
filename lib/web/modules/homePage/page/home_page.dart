@@ -154,180 +154,178 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        SizedBox(
-          height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
-          child: Container(
-            color: WebColors.secondBackgroundColor,
-            child: Stack(
-              children: [
-                Column(
-                  spacing: 0,
-                  children: [
-                    Container(
-                      color: WebColors.secondBackgroundColor,
-                      height: ScreenSizeHelper.h(widget.constraints, 50),
-                    ),
-                    Container(
-                      color: WebColors.thirdBackgroundColor,
-                      height: ScreenSizeHelper.h(widget.constraints, 50),
-                    ),
-                  ],
+        Container(
+          color: WebColors.secondBackgroundColor,
+          height: ScreenSizeHelper.fullH(widget.constraints, 90, 550),
+          child: Stack(
+            children: [
+              Column(
+                spacing: 0,
+                children: [
+                  Container(
+                    color: WebColors.secondBackgroundColor,
+                    height: ScreenSizeHelper.h(widget.constraints, 45),
+                  ),
+                  Container(
+                    color: WebColors.thirdBackgroundColor,
+                    height: ScreenSizeHelper.h(widget.constraints, 45),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: ScreenSizeHelper.h(widget.constraints, 3),
+                  horizontal: ScreenSizeHelper.w(widget.constraints, 5),
                 ),
-                Padding(
+                child: SizedBox(
+                  width: ScreenSizeHelper.w(widget.constraints, 40),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      TextWebWidget(
+                        AppLocalizations.of(context)!.homePage_SecondPart_FirstIntroduction,
+                        fontSize: ScreenSizeHelper.sp(widget.constraints, 30),
+                        maxLines: 2,
+                        fontWeight: FontWeight.normal,
+                        textAlign: TextAlign.start,
+                        textColor: WebColors.blueWebColor,
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                      TextWebWidget(
+                        AppLocalizations.of(context)!.homePage_SecondPart_SecondIntroduction,
+                        fontSize: ScreenSizeHelper.sp(widget.constraints, 20),
+                        maxLines: 4,
+                        fontWeight: FontWeight.normal,
+                        textAlign: TextAlign.start,
+                        textColor: WebColors.textWebColor,
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
+                      TextWebWidget(
+                        AppLocalizations.of(context)!.homePage_SecondPart_ThirdIntroduction,
+                        fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                        maxLines: 12,
+                        fontWeight: FontWeight.w100,
+                        textAlign: TextAlign.start,
+                        textColor: WebColors.textWebColor,
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                      TextWebWidget(
+                        AppLocalizations.of(context)!.homePage_SecondPart_FourthIntroduction,
+                        fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                        maxLines: 4,
+                        fontWeight: FontWeight.w100,
+                        textAlign: TextAlign.start,
+                        textColor: WebColors.textWebColor,
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 3)),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: ButtonWebWidget(
+                          constraintType: widget.constraints,
+                          backgroundColor: WebColors.blueWebColor,
+                          borderColor: WebColors.blueWebColor,
+                          padding: EdgeInsets.symmetric(vertical: ScreenSizeHelper.w(widget.constraints, .5)),
+                          widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                WebPathsHelper.resumeIcon,
+                                height: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                              ),
+                              SizedBox(
+                                width: ScreenSizeHelper.w(widget.constraints, .5),
+                              ),
+                              TextWebWidget(
+                                AppLocalizations.of(context)!.homePage_Resume,
+                                fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                                maxLines: 2,
+                                fontWeight: FontWeight.w100,
+                                textAlign: TextAlign.start,
+                                textColor: WebColors.textWebColor,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+
+                          },
+                        ),
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 8)),
+                      TextWebWidget(
+                        AppLocalizations.of(context)!.homePage_MyTools,
+                        maxLines: 3,
+                        fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
+                        fontWeight: FontWeight.w100,
+                        textAlign: TextAlign.start,
+                        textColor: WebColors.textWebColor,
+                      ),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                      SizedBox(
+                        width: ScreenSizeHelper.myToolsWidth(widget.constraints, 50),
+                        child: CarouselSlider.builder(
+                          carouselController: _controller.carouselController,
+                          itemCount: _controller.chatGptContentList.length,
+                          options: CarouselOptions(
+                            viewportFraction: ScreenSizeHelper.myToolsIconsShowing(widget.constraints, 22),
+                            height: ScreenSizeHelper.myToolsIconWidth(widget.constraints, 22),
+                            enlargeStrategy: CenterPageEnlargeStrategy.height,
+                            autoPlay: true,
+                            enableInfiniteScroll: true,
+                            autoPlayInterval: const Duration(seconds: 2),
+                            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                          ),
+                          itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+                            return DevToolsWidget(
+                              toolName: _controller.chatGptContentList[itemIndex].toolName,
+                              toolImagePath: _controller.chatGptContentList[itemIndex].toolImagePath,
+                              constraintType: widget.constraints,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: ScreenSizeHelper.w(widget.constraints, 34),
                   padding: EdgeInsets.symmetric(
-                    vertical: ScreenSizeHelper.h(widget.constraints, 3),
+                    vertical: ScreenSizeHelper.w(widget.constraints, 3),
                     horizontal: ScreenSizeHelper.w(widget.constraints, 5),
                   ),
-                  child: SizedBox(
-                    width: ScreenSizeHelper.w(widget.constraints, 40),
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
-                        TextWebWidget(
-                          AppLocalizations.of(context)!.homePage_SecondPart_FirstIntroduction,
-                          fontSize: ScreenSizeHelper.sp(widget.constraints, 30),
-                          maxLines: 2,
-                          fontWeight: FontWeight.normal,
-                          textAlign: TextAlign.start,
-                          textColor: WebColors.blueWebColor,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          color: WebColors.blueWebColor,
+                          height: ScreenSizeHelper.w(widget.constraints, 25),
+                          width: ScreenSizeHelper.w(widget.constraints, 18.75),
                         ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                        TextWebWidget(
-                          AppLocalizations.of(context)!.homePage_SecondPart_SecondIntroduction,
-                          fontSize: ScreenSizeHelper.sp(widget.constraints, 20),
-                          maxLines: 4,
-                          fontWeight: FontWeight.normal,
-                          textAlign: TextAlign.start,
-                          textColor: WebColors.textWebColor,
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
-                        TextWebWidget(
-                          AppLocalizations.of(context)!.homePage_SecondPart_ThirdIntroduction,
-                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
-                          maxLines: 12,
-                          fontWeight: FontWeight.w100,
-                          textAlign: TextAlign.start,
-                          textColor: WebColors.textWebColor,
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                        TextWebWidget(
-                          AppLocalizations.of(context)!.homePage_SecondPart_FourthIntroduction,
-                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
-                          maxLines: 4,
-                          fontWeight: FontWeight.w100,
-                          textAlign: TextAlign.start,
-                          textColor: WebColors.textWebColor,
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 3)),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: ButtonWebWidget(
-                            constraintType: widget.constraints,
-                            backgroundColor: WebColors.blueWebColor,
-                            borderColor: WebColors.blueWebColor,
-                            padding: EdgeInsets.symmetric(vertical: ScreenSizeHelper.w(widget.constraints, .5)),
-                            widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.asset(
-                                  WebPathsHelper.resumeIcon,
-                                  height: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
-                                ),
-                                SizedBox(
-                                  width: ScreenSizeHelper.w(widget.constraints, .5),
-                                ),
-                                TextWebWidget(
-                                  AppLocalizations.of(context)!.homePage_Resume,
-                                  fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
-                                  maxLines: 2,
-                                  fontWeight: FontWeight.w100,
-                                  textAlign: TextAlign.start,
-                                  textColor: WebColors.textWebColor,
-                                ),
-                              ],
-                            ),
-                            onPressed: () {
-
-                            },
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: ScreenSizeHelper.w(widget.constraints, 1),
+                            right: ScreenSizeHelper.w(widget.constraints, 1),
                           ),
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 8)),
-                        TextWebWidget(
-                          AppLocalizations.of(context)!.homePage_MyTools,
-                          maxLines: 3,
-                          fontSize: ScreenSizeHelper.sp(widget.constraints, 18),
-                          fontWeight: FontWeight.w100,
-                          textAlign: TextAlign.start,
-                          textColor: WebColors.textWebColor,
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                        SizedBox(
-                          width: ScreenSizeHelper.myToolsWidth(widget.constraints, 50),
-                          child: CarouselSlider.builder(
-                            carouselController: _controller.carouselController,
-                            itemCount: _controller.chatGptContentList.length,
-                            options: CarouselOptions(
-                              viewportFraction: ScreenSizeHelper.myToolsIconsShowing(widget.constraints, 22),
-                              height: ScreenSizeHelper.myToolsIconWidth(widget.constraints, 22),
-                              enlargeStrategy: CenterPageEnlargeStrategy.height,
-                              autoPlay: true,
-                              enableInfiniteScroll: true,
-                              autoPlayInterval: const Duration(seconds: 2),
-                              autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                            ),
-                            itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
-                              return DevToolsWidget(
-                                toolName: _controller.chatGptContentList[itemIndex].toolName,
-                                toolImagePath: _controller.chatGptContentList[itemIndex].toolImagePath,
-                                constraintType: widget.constraints,
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: ScreenSizeHelper.w(widget.constraints, 34),
-                    padding: EdgeInsets.symmetric(
-                      vertical: ScreenSizeHelper.w(widget.constraints, 3),
-                      horizontal: ScreenSizeHelper.w(widget.constraints, 5),
-                    ),
-                    child: Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            color: WebColors.blueWebColor,
+                          child: Image.asset(
+                            WebPathsHelper.imageProfile,
                             height: ScreenSizeHelper.w(widget.constraints, 25),
                             width: ScreenSizeHelper.w(widget.constraints, 18.75),
                           ),
                         ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              top: ScreenSizeHelper.w(widget.constraints, 1),
-                              right: ScreenSizeHelper.w(widget.constraints, 1),
-                            ),
-                            child: Image.asset(
-                              WebPathsHelper.imageProfile,
-                              height: ScreenSizeHelper.w(widget.constraints, 25),
-                              width: ScreenSizeHelper.w(widget.constraints, 18.75),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],

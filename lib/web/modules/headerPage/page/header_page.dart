@@ -71,8 +71,8 @@ class _HeaderPageState extends State<HeaderPage> {
                       children: [
                         Image.asset(
                           WebPathsHelper.logo,
-                          height: ScreenSizeHelper.h(constraints, 7),
-                          width: ScreenSizeHelper.h(constraints, 7),
+                          height: ScreenSizeHelper.logoW(constraints, 7),
+                          width: ScreenSizeHelper.logoW(constraints, 7),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -109,7 +109,9 @@ class _HeaderPageState extends State<HeaderPage> {
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Image.asset(WebPathsHelper.brazilFlag),
+                                Image.asset(
+                                  WebPathsHelper.brazilFlag,
+                                ),
                                 Icon(
                                   Icons.arrow_drop_down,
                                   color: WebColors.textWebColor,
