@@ -9,10 +9,23 @@ class PassThroughScrollPhysicsHelper extends ClampingScrollPhysics {
 
   @override
   double applyBoundaryConditions(ScrollMetrics position, double value) {
-    final hitTop    = value < 0 && position.pixels <= position.minScrollExtent;
-    final hitBottom = value > 0 && position.pixels >= position.maxScrollExtent;
+    assert(position.minScrollExtent <= position.maxScrollExtent);
 
-    if (hitTop || hitBottom) return value;
+    if (value < position.pixels && position.pixels <= position.minScrollExtent) {
+      return value - position.pixels;
+    }
+
+    if (value > position.pixels && position.pixels >= position.maxScrollExtent) {
+      return value - position.pixels;
+    }
+
+    if (value < position.minScrollExtent && position.pixels > position.minScrollExtent) {
+      return value - position.minScrollExtent;
+    }
+
+    if (value > position.maxScrollExtent && position.pixels < position.maxScrollExtent) {
+      return value - position.maxScrollExtent;
+    }
 
     return 0.0;
   }
