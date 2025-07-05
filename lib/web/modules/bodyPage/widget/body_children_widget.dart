@@ -26,10 +26,11 @@ class _BodyChildrenWidgetState extends State<BodyChildrenWidget> {
             padding: EdgeInsets.only(top: ScreenSizeHelper.h(constraints, 4)),
             child: ScrollConfiguration(
               behavior: CustomScrollWidget(),
-              child: ListView(
-                shrinkWrap: true,
+              child: SingleChildScrollView(
                 primary: true,
-                children: widget.childrenWidget,
+                child: Column(
+                  children: widget.childrenWidget,
+                ),
               ),
             ),
           );
