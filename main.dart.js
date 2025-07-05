@@ -67999,14 +67999,14 @@ a=b.ay
 a===$&&A.b()
 b.ax===$&&A.b()
 b=A.aB5(a0.a.c,22)
-k=A.bb(A.a2f(A.a([o,p,q,a3,s,i,h,f,new A.dG(B.hw,a1,a1,d,a1),e,r,c,A.bb(A.aka(a,new A.aeU(a0),20,A.ak9(!0,B.i8,B.cS,!0,B.kO,A.aly(a0.a.c,22),b)),a1,g)],j),new A.pH(a1),a1,!0),a1,k*25/100)
+k=A.bb(A.a2f(A.a([o,p,q,a3,s,i,h,f,new A.dG(B.hw,a1,a1,d,a1),e,r,c,A.bb(A.aka(a,new A.aeU(a0),20,A.ak9(!0,B.i8,B.cS,!0,B.kO,A.aly(a0.a.c,22),b)),a1,g)],j),new A.pH(a1),a1,!0),a1,k*45/100)
 g=a0.a.c.b
 b=g*3/100
 a=g*5/100
-c=g*25/100
-r=g*18.75/100
+c=g*30/100
+r=g*22.5/100
 e=g/100
-return A.j8(A.a([a4,A.cn(A.iA(B.aT,A.a([a2,new A.eT(new A.aY(m,n,m,n),k,a1),new A.dG(B.dm,a1,a1,A.cn(A.iA(B.aT,A.a([new A.dG(B.dm,a1,a1,A.cn(a1,B.cR,a1,c,a1,a1,r),a1),new A.dG(B.dm,a1,a1,A.cn(A.hq("lib/web/assets/images/image_profile.jpg",a1,c,r),a1,a1,a1,new A.aY(0,e,e,0),a1,a1),a1)],j),B.bB),a1,a1,a1,a1,new A.aY(a,b,a,b),g*34/100),a1)],j),B.bB),B.ex,a1,l,a1,a1,a1)],j),B.aA,B.a5,B.aL,0)}}
+return A.j8(A.a([a4,A.cn(A.iA(B.aT,A.a([a2,new A.eT(new A.aY(m,n,m,n),k,a1),new A.dG(B.dm,a1,a1,A.cn(A.iA(B.aT,A.a([new A.dG(B.dm,a1,a1,A.cn(a1,B.cR,a1,c,a1,a1,r),a1),new A.dG(B.dm,a1,a1,A.cn(A.hq("lib/web/assets/images/image_profile.jpg",a1,c,r),a1,a1,a1,new A.aY(0,e,e,0),a1,a1),a1)],j),B.bB),a1,a1,a1,a1,new A.aY(a,b,a,b),g*40/100),a1)],j),B.bB),B.ex,a1,l,a1,a1,a1)],j),B.aA,B.a5,B.aL,0)}}
 A.aeN.prototype={
 $0(){var s=this.a.d
 s===$&&A.b()
