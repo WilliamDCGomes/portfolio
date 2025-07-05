@@ -61,24 +61,26 @@ class _DescriptionProjectWidgetState extends State<DescriptionProjectWidget> {
           SizedBox(height: ScreenSizeHelper.w(widget.constraints, 1.5)),
           SizedBox(
             height: ScreenSizeHelper.w(widget.constraints, 22),
-            child: ListView(
-              shrinkWrap: true,
-              children: [
-                TextWebWidget(
-                  widget.description,
-                  maxLines: 20,
-                  fontSize: ScreenSizeHelper.sp(widget.constraints, 14),
-                  fontWeight: FontWeight.w100,
-                  textAlign: TextAlign.start,
-                  textColor: WebColors.textWebColor,
-                ),
-                SizedBox(height: ScreenSizeHelper.w(widget.constraints, 1.5)),
-                Wrap(
-                  spacing: ScreenSizeHelper.w(widget.constraints, 1),
-                  runSpacing: ScreenSizeHelper.w(widget.constraints, 1),
-                  children: _createList(),
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextWebWidget(
+                    widget.description,
+                    maxLines: 20,
+                    fontSize: ScreenSizeHelper.sp(widget.constraints, 14),
+                    fontWeight: FontWeight.w100,
+                    textAlign: TextAlign.start,
+                    textColor: WebColors.textWebColor,
+                  ),
+                  SizedBox(height: ScreenSizeHelper.w(widget.constraints, 1.5)),
+                  Wrap(
+                    spacing: ScreenSizeHelper.w(widget.constraints, 1),
+                    runSpacing: ScreenSizeHelper.w(widget.constraints, 1),
+                    children: _createList(),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
