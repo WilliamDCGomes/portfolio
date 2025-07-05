@@ -120,10 +120,22 @@ class ProjectController extends GetxController {
   }
 
   void handleNotification(ScrollNotification n) {
+    if(n.context == null) return;
+
+    final primary = PrimaryScrollController.of(n.context!);
+
+    if (!primary.hasClients) return;
+
     if (n is OverscrollNotification) {
-      final primary = PrimaryScrollController.of(Get.context!);
-      if (primary.hasClients) {
-        primary.position.moveTo(primary.position.pixels + n.overscroll);
+      primary.position.moveTo(primary.position.pixels + n.overscroll);
+    }
+
+    if (n is ScrollUpdateNotification && n.scrollDelta != null) {
+      final edgeTop    = n.metrics.pixels <= 0 && n.scrollDelta! < 0;
+      final edgeBottom = n.metrics.pixels >= n.metrics.maxScrollExtent && n.scrollDelta! > 0;
+
+      if (edgeTop || edgeBottom) {
+        primary.position.moveTo(primary.position.pixels + n.scrollDelta!);
       }
     }
   }

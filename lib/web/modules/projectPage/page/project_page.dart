@@ -76,7 +76,7 @@ class _ProjectPageState extends State<ProjectPage> {
               child: ListView.builder(
                 key: UniqueKey(),
                 controller: _controller.listViewController,
-                physics: widget.allowScroll ? ClampingScrollPhysics() : NeverScrollableScrollPhysics(),
+                physics: widget.allowScroll ? AlwaysScrollableScrollPhysics() : NeverScrollableScrollPhysics(),
                 itemCount: _controller.projects.length,
                 itemBuilder: (BuildContext context, int index) {
                   var item = _controller.projects[index];
