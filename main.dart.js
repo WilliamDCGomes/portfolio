@@ -68267,7 +68267,7 @@ a2=a0.a.c.d
 l=a2*45/100
 l=A.hj(A.a([A.ct(a1,B.F2,a1,l,a1,a1,a1),A.ct(a1,B.hS,a1,l,a1,a1,a1)],j),B.at,B.V,B.aG,0)
 k=a0.a.c
-n=k.d*3/100
+n=k.d
 k=k.b
 m=k*5/100
 o=A.d_(A.dQ(a5,B.am,r).gtV(),A.dn(a0.a.c,30),B.A,2,B.ae,B.cR)
@@ -68283,7 +68283,7 @@ e=g.b*0.5/100
 d=A.aBo(g,4)
 c=A.aqE(a0.a.c,10)
 c=A.ao3(B.cR,B.cR,A.iu(A.a([A.hs("lib/web/assets/images/resume_icon.png",a1,A.aqC(a0.a.c,1.5),a1),A.bf(a1,a1,a0.a.c.b*0.5/100),A.d_(A.dQ(a5,B.am,r).gtS(),A.aqD(a0.a.c,1),B.aY,2,B.ae,B.Q)],j),B.V,B.b4),g,d,new A.af3(),new A.b2(0,e,0,e),c)
-e=A.bf(a1,a0.a.c.d*5/100,a1)
+e=A.bf(a1,a0.a.c.d*4/100,a1)
 r=A.d_(A.dQ(a5,B.am,r).gtR(),A.dn(a0.a.c,18),B.aY,3,B.ae,B.Q)
 d=a0.a.c
 g=A.bf(a1,d.d*2/100,a1)
@@ -68301,7 +68301,7 @@ a=d*5/100
 g=d*25/100
 r=d*18.75/100
 e=d/100
-return A.hj(A.a([a4,A.ct(A.iA(B.aT,A.a([l,new A.eT(new A.b2(m,n,m,n),k,a1),new A.dI(B.dm,a1,a1,A.ct(A.iA(B.aT,A.a([new A.dI(B.dm,a1,a1,A.ct(a1,B.cR,a1,g,a1,a1,r),a1),new A.dI(B.dm,a1,a1,A.ct(A.hs("lib/web/assets/images/image_profile.jpg",a1,g,r),a1,a1,a1,new A.b2(0,e,e,0),a1,a1),a1)],j),B.bD),a1,a1,a1,a1,new A.b2(a,b,a,b),d*40/100),a1)],j),B.bD),B.hS,a1,a2*90/100,a1,a1,a1)],j),B.at,B.V,B.aG,0)}}
+return A.hj(A.a([a4,A.ct(A.iA(B.aT,A.a([l,new A.eT(new A.b2(m,n*3/100,m,n/100),k,a1),new A.dI(B.dm,a1,a1,A.ct(A.iA(B.aT,A.a([new A.dI(B.dm,a1,a1,A.ct(a1,B.cR,a1,g,a1,a1,r),a1),new A.dI(B.dm,a1,a1,A.ct(A.hs("lib/web/assets/images/image_profile.jpg",a1,g,r),a1,a1,a1,new A.b2(0,e,e,0),a1,a1),a1)],j),B.bD),a1,a1,a1,a1,new A.b2(a,b,a,b),d*40/100),a1)],j),B.bD),B.hS,a1,a2*90/100,a1,a1,a1)],j),B.at,B.V,B.aG,0)}}
 A.aeY.prototype={
 $0(){var s=this.a.d
 s===$&&A.b()
