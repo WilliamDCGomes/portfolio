@@ -151,9 +151,11 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: ScreenSizeHelper.h(widget.constraints, 3),
-                  horizontal: ScreenSizeHelper.w(widget.constraints, 5),
+                padding: EdgeInsets.only(
+                  top: ScreenSizeHelper.h(widget.constraints, 3),
+                  bottom: ScreenSizeHelper.h(widget.constraints, 1),
+                  left: ScreenSizeHelper.w(widget.constraints, 5),
+                  right: ScreenSizeHelper.w(widget.constraints, 5),
                 ),
                 child: SizedBox(
                   width: ScreenSizeHelper.w(widget.constraints, 40),
@@ -230,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                           },
                         ),
                       ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 5)),
+                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
                       TextWebWidget(
                         AppLocalizations.of(context)!.homePage_MyTools,
                         maxLines: 3,
