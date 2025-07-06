@@ -68305,7 +68305,7 @@ A.wt.prototype={}
 A.wu.prototype={
 al(){return new A.Se()}}
 A.Se.prototype={
-aq(){var s,r,q,p,o,n,m,l,k,j,i,h=$.bA()
+aq(){var s,r,q,p,o,n,m,l,k,j,i,h,g=$.bA()
 this.a.toString
 s=t.Wo
 s=new A.wt(A.a([],t.EH),A.di(null,null,null,t.X,t.xW),new A.et(s),new A.et(s),!1,!1)
@@ -68320,8 +68320,10 @@ l=A.a(["Flutter","Dart",".NET","C#","SQL Server","Azure","Firebase"],r)
 k=A.a(["lib/web/assets/images/projects/elephant/1.png","lib/web/assets/images/projects/elephant/2.png","lib/web/assets/images/projects/elephant/3.png","lib/web/assets/images/projects/elephant/4.png","lib/web/assets/images/projects/elephant/5.png"],r)
 j=A.a(["Flutter","Dart",".NET","C#","SQL Server","SQLite","Azure"],r)
 i=A.a(["lib/web/assets/images/projects/japamix/1.png","lib/web/assets/images/projects/japamix/2.png","lib/web/assets/images/projects/japamix/3.png","lib/web/assets/images/projects/japamix/4.png"],r)
-s.ay=A.a([new A.l6("Social Media Video Creator","Aplicativo criado com a inten\xe7\xe3o de gerar automaticamente v\xeddeos para plataformas de m\xeddia social como TikTok, Instagram e YouTube Shorts. O objetivo \xe9 que o usu\xe1rio apenas informe o tema do v\xeddeo, e ent\xe3o um v\xeddeo ser\xe1 gerado com a narra\xe7\xe3o de um conte\xfado criado por intelig\xeancia artificial.",p,q),new A.l6("Prot\xf3tipo de Controle Educacional","Este aplicativo foi criado com a inten\xe7\xe3o de facilitar e agilizar a troca de informa\xe7\xf5es entre uma institui\xe7\xe3o de ensino e os alunos. Com ele, o aluno pode acompanhar suas notas, frequ\xeancia, tarefas, aulas, comunicados e at\xe9 mesmo fazer algumas solicita\xe7\xf5es diretamente pelo aplicativo.",n,o),new A.l6("ZiPartner","Este aplicativo foi criado com a inten\xe7\xe3o de permitir que voc\xea encontre outras pessoas interessadas em treinar juntas. Ele funciona mostrando pessoas pr\xf3ximas a voc\xea junto com suas informa\xe7\xf5es, como os treinos que praticam e as academias que frequentam. Se houver um MATCH entre voc\xeas, um chat interno \xe9 aberto dentro do app, permitindo que voc\xeas agendem uma sess\xe3o de treino juntos.",l,m),new A.l6("Elephant Control","Este aplicativo foi desenvolvido com o objetivo de gerenciar o controle de m\xe1quinas de pr\xeamios com bichos de pel\xfacia. Ele inclui quatro tipos diferentes de usu\xe1rios, cada um com acesso exclusivo \xe0 sua respectiva conta.",j,k),new A.l6("Cat\xe1logo Japamix","Este aplicativo foi criado com a inten\xe7\xe3o de ser um guia tur\xedstico para uma cidade. Ele inclui diversos locais dentro da cidade, como estabelecimentos comerciais, pontos tur\xedsticos, shoppings, parques e muito mais.",A.a(["Flutter","Dart",".NET","C#","Azure","Firebase"],r),i)],t.th)
-this.d=A.Gr(h,s,t.e0)
+h=t.th
+i=s.ay=A.a([new A.l6("Social Media Video Creator","Aplicativo criado com a inten\xe7\xe3o de gerar automaticamente v\xeddeos para plataformas de m\xeddia social como TikTok, Instagram e YouTube Shorts. O objetivo \xe9 que o usu\xe1rio apenas informe o tema do v\xeddeo, e ent\xe3o um v\xeddeo ser\xe1 gerado com a narra\xe7\xe3o de um conte\xfado criado por intelig\xeancia artificial.",p,q),new A.l6("Prot\xf3tipo de Controle Educacional","Este aplicativo foi criado com a inten\xe7\xe3o de facilitar e agilizar a troca de informa\xe7\xf5es entre uma institui\xe7\xe3o de ensino e os alunos. Com ele, o aluno pode acompanhar suas notas, frequ\xeancia, tarefas, aulas, comunicados e at\xe9 mesmo fazer algumas solicita\xe7\xf5es diretamente pelo aplicativo.",n,o),new A.l6("ZiPartner","Este aplicativo foi criado com a inten\xe7\xe3o de permitir que voc\xea encontre outras pessoas interessadas em treinar juntas. Ele funciona mostrando pessoas pr\xf3ximas a voc\xea junto com suas informa\xe7\xf5es, como os treinos que praticam e as academias que frequentam. Se houver um MATCH entre voc\xeas, um chat interno \xe9 aberto dentro do app, permitindo que voc\xeas agendem uma sess\xe3o de treino juntos.",l,m),new A.l6("Elephant Control","Este aplicativo foi desenvolvido com o objetivo de gerenciar o controle de m\xe1quinas de pr\xeamios com bichos de pel\xfacia. Ele inclui quatro tipos diferentes de usu\xe1rios, cada um com acesso exclusivo \xe0 sua respectiva conta.",j,k),new A.l6("Cat\xe1logo Japamix","Este aplicativo foi criado com a inten\xe7\xe3o de ser um guia tur\xedstico para uma cidade. Ele inclui diversos locais dentro da cidade, como estabelecimentos comerciais, pontos tur\xedsticos, shoppings, parques e muito mais.",A.a(["Flutter","Dart",".NET","C#","Azure","Firebase"],r),i)],h)
+s.ay=A.a([i[0],i[1],i[2]],h)
+this.d=A.Gr(g,s,t.e0)
 this.aR()},
 P(a){var s,r,q,p,o=this,n=null,m=o.a.d,l=Math.max(m.d*100/100,550),k=m.b,j=Math.max(k*100/100,550),i=k*5/100,h=k*0.6/100
 k/=100
@@ -68337,8 +68339,10 @@ r=Math.max(r*80/100,550)
 m=m.c?new A.Jf(n):new A.pH(n)
 p=o.d
 p===$&&A.b()
-p.ay===$&&A.b()
-return A.cn(A.hi(A.a([h,s,k,q,A.bc(new A.vo(new A.Lh(new A.agn(o),5,!0,!0,!0,n),n,B.bm,!1,n,n,m,!1,n,5,B.aW,n,n,B.ag,B.ah,n),r,n)],t.F),B.at,B.a2,B.aw,0),B.ex,n,l,n,new A.aZ(i,0,i,0),j)}}
+p=p.ay
+p===$&&A.b()
+p=p.length
+return A.cn(A.hi(A.a([h,s,k,q,A.bc(new A.vo(new A.Lh(new A.agn(o),p,!0,!0,!0,n),n,B.bm,!1,n,n,m,!1,n,p,B.aW,n,n,B.ag,B.ah,n),r,n)],t.F),B.at,B.a2,B.aw,0),B.ex,n,l,n,new A.aZ(i,0,i,0),j)}}
 A.agn.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l,k=null,j=this.a,i=j.d
 i===$&&A.b()
