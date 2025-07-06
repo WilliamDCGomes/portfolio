@@ -113,5 +113,11 @@ class ProjectController extends GetxController {
         ],
       ),
     ];
+
+    projects = [
+      projects[0],
+      projects[1],
+      projects[2],
+    ];
   }
 }
