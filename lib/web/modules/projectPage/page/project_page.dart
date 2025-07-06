@@ -70,7 +70,6 @@ class _ProjectPageState extends State<ProjectPage> {
           SizedBox(
             height: ScreenSizeHelper.fullH(widget.constraints, 80, 550),
             child: ListView.builder(
-              key: UniqueKey(),
               physics: widget.allowScroll ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
               itemCount: _controller.projects.length,
               itemBuilder: (BuildContext context, int index) {
