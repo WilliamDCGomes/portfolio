@@ -10,6 +10,17 @@ class ScreenSizeHelper{
     }
     return width;
   }
+  static double buttonResumeH(constraints, double percent) {
+    double width = constraints.maxWidth * percent / 100;
+
+    if(width < 35) {
+      return 35;
+    }
+    else if(width > 60) {
+      return 60;
+    }
+    return width;
+  }
   static double buttonH(constraints, double percent) {
     double width = constraints.maxWidth * percent / 100;
 

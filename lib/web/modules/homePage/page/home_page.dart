@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../controller/home_controller.dart';
 import '../../../../enums/social_media_enum.dart';
+import '../widget/scrolling_indicator_widget.dart';
 import '../../../utils/stylePages/web_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       children: [
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 5)),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 3)),
                         TextWebWidget(
                           AppLocalizations.of(context)!.homePage_FirstIntroduction,
                           fontSize: ScreenSizeHelper.sp(widget.constraints, 50),
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.normal,
                           textColor: WebColors.textWebColor,
                         ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 6)),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 3)),
                         SizedBox(
                           width: ScreenSizeHelper.w(widget.constraints, 60),
                           child: TextWebWidget(
@@ -78,73 +79,50 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(height: ScreenSizeHelper.h(widget.constraints, 6)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              child: SizedBox(),
-                            ),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.instagramIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.instagram),
-                            ),
-                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.youtubeIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.youtube),
-                            ),
-                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.tiktokIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.tiktok),
-                            ),
-                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.linkedinIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.linkedin),
-                            ),
-                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.githubIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.github),
-                            ),
-                            SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
-                            SocialMediaButtonWidget(
-                              constraintType: widget.constraints,
-                              imagePath: WebPathsHelper.gmailIcon,
-                              onTap: () => _controller.openSocialMedia(SocialMediaEnum.gmail),
-                            ),
-                            Expanded(
-                              child: SizedBox(),
-                            ),
-                          ],
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Padding(
-                            padding: EdgeInsets.only(top: ScreenSizeHelper.h(widget.constraints, 12)),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextWebWidget(
-                                  AppLocalizations.of(context)!.homePage_Scroll,
-                                  fontSize: ScreenSizeHelper.sp(widget.constraints, 15),
-                                  maxLines: 3,
-                                  fontWeight: FontWeight.w400,
-                                  textColor: WebColors.textWebColor,
-                                ),
-                                const Icon(
-                                  Icons.arrow_downward_outlined,
-                                  color: WebColors.textWebColor,
-                                ),
-                              ],
-                            ),
+                        Center(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.instagramIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.instagram),
+                              ),
+                              SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.youtubeIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.youtube),
+                              ),
+                              SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.tiktokIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.tiktok),
+                              ),
+                              SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.linkedinIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.linkedin),
+                              ),
+                              SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.githubIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.github),
+                              ),
+                              SizedBox(width: ScreenSizeHelper.w(widget.constraints, 2)),
+                              SocialMediaButtonWidget(
+                                constraintType: widget.constraints,
+                                imagePath: WebPathsHelper.gmailIcon,
+                                onTap: () => _controller.openSocialMedia(SocialMediaEnum.gmail),
+                              ),
+                            ],
                           ),
+                        ),
+                        ScrollingIndicatorWidget(
+                          constraints: widget.constraints,
                         ),
                       ],
                     ),
@@ -156,7 +134,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Container(
           color: WebColors.thirdBackgroundColor,
-          height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
+          height: ScreenSizeHelper.h(widget.constraints, 90),
           child: Stack(
             children: [
               Column(
@@ -178,10 +156,9 @@ class _HomePageState extends State<HomePage> {
                   horizontal: ScreenSizeHelper.w(widget.constraints, 5),
                 ),
                 child: SizedBox(
-                  width: ScreenSizeHelper.w(widget.constraints, 45),
+                  width: ScreenSizeHelper.w(widget.constraints, 40),
                   child: ListView(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       TextWebWidget(
                         AppLocalizations.of(context)!.homePage_SecondPart_FirstIntroduction,
@@ -226,6 +203,7 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: WebColors.blueWebColor,
                           borderColor: WebColors.blueWebColor,
                           padding: EdgeInsets.symmetric(vertical: ScreenSizeHelper.w(widget.constraints, .5)),
+                          heightButton: ScreenSizeHelper.buttonResumeH(widget.constraints, 4),
                           widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -303,8 +281,8 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.topRight,
                         child: Container(
                           color: WebColors.blueWebColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 30),
-                          width: ScreenSizeHelper.w(widget.constraints, 22.5),
+                          height: ScreenSizeHelper.w(widget.constraints, 25),
+                          width: ScreenSizeHelper.w(widget.constraints, 18.75),
                         ),
                       ),
                       Align(
@@ -316,8 +294,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: Image.asset(
                             WebPathsHelper.imageProfile,
-                            height: ScreenSizeHelper.w(widget.constraints, 30),
-                            width: ScreenSizeHelper.w(widget.constraints, 22.5),
+                            height: ScreenSizeHelper.w(widget.constraints, 25),
+                            width: ScreenSizeHelper.w(widget.constraints, 18.75),
                           ),
                         ),
                       ),

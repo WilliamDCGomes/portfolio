@@ -34,7 +34,6 @@ class _ProjectPageState extends State<ProjectPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenSizeHelper.fullH(widget.constraints, 100, 550),
       width: ScreenSizeHelper.fullW(widget.constraints, 100, 550),
       padding: EdgeInsets.symmetric(
         horizontal: ScreenSizeHelper.w(widget.constraints, 5),
