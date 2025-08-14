@@ -77,22 +77,23 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                         width: ScreenSizeHelper.w(widget.constraints, 12),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          color: WebColors.backgroundProjectColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 24),
-                          width: ScreenSizeHelper.w(widget.constraints, .4),
-                        ),
-                        SizedBox(
-                          width: ScreenSizeHelper.w(widget.constraints, 11.4),
-                        ),
-                        Container(
-                          color: WebColors.backgroundProjectColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 24),
-                          width: ScreenSizeHelper.w(widget.constraints, .5),
-                        ),
-                      ],
+                    SizedBox(
+                      width: ScreenSizeHelper.w(widget.constraints, 12.3),
+                      child: Row(
+                        children: [
+                          Container(
+                            color: WebColors.backgroundProjectColor,
+                            height: ScreenSizeHelper.w(widget.constraints, 24),
+                            width: ScreenSizeHelper.w(widget.constraints, .4),
+                          ),
+                          Expanded(child: Container()),
+                          Container(
+                            color: WebColors.backgroundProjectColor,
+                            height: ScreenSizeHelper.w(widget.constraints, 24),
+                            width: ScreenSizeHelper.w(widget.constraints, .5),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -152,22 +153,23 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: ScreenSizeHelper.w(widget.constraints, .5)),
-                    child: Row(
-                      children: [
-                        Container(
-                          color: WebColors.backgroundProjectColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 24),
-                          width: ScreenSizeHelper.w(widget.constraints, .4),
-                        ),
-                        SizedBox(
-                          width: ScreenSizeHelper.w(widget.constraints, 11.5),
-                        ),
-                        Container(
-                          color: WebColors.backgroundProjectColor,
-                          height: ScreenSizeHelper.w(widget.constraints, 24),
-                          width: ScreenSizeHelper.w(widget.constraints, .5),
-                        ),
-                      ],
+                    child: SizedBox(
+                      width: ScreenSizeHelper.w(widget.constraints, 12.3),
+                      child: Row(
+                        children: [
+                          Container(
+                            color: WebColors.backgroundProjectColor,
+                            height: ScreenSizeHelper.w(widget.constraints, 24),
+                            width: ScreenSizeHelper.w(widget.constraints, .4),
+                          ),
+                          Expanded(child: Container()),
+                          Container(
+                            color: WebColors.backgroundProjectColor,
+                            height: ScreenSizeHelper.w(widget.constraints, 24),
+                            width: ScreenSizeHelper.w(widget.constraints, .5),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
