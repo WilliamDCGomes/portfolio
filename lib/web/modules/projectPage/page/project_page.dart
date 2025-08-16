@@ -35,8 +35,10 @@ class _ProjectPageState extends State<ProjectPage> {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenSizeHelper.fullW(widget.constraints, 100, 550),
-      padding: EdgeInsets.symmetric(
-        horizontal: ScreenSizeHelper.w(widget.constraints, 5),
+      padding: EdgeInsets.only(
+        top: ScreenSizeHelper.h(widget.constraints, 8),
+        left: ScreenSizeHelper.w(widget.constraints, 5),
+        right: ScreenSizeHelper.w(widget.constraints, 5),
       ),
       color: WebColors.thirdBackgroundColor,
       child: Column(

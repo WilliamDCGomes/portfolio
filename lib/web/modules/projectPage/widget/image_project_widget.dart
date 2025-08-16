@@ -70,15 +70,8 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                         ),
                       ),
                     ),
-                    Center(
-                      child: Image.asset(
-                        WebPathsHelper.samsungScreen,
-                        height: ScreenSizeHelper.w(widget.constraints, 24),
-                        width: ScreenSizeHelper.w(widget.constraints, 12),
-                      ),
-                    ),
                     SizedBox(
-                      width: ScreenSizeHelper.w(widget.constraints, 12.3),
+                      width: ScreenSizeHelper.w(widget.constraints, 12.4),
                       child: Row(
                         children: [
                           Container(
@@ -90,9 +83,16 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                           Container(
                             color: WebColors.backgroundProjectColor,
                             height: ScreenSizeHelper.w(widget.constraints, 24),
-                            width: ScreenSizeHelper.w(widget.constraints, .5),
+                            width: ScreenSizeHelper.w(widget.constraints, .8),
                           ),
                         ],
+                      ),
+                    ),
+                    Center(
+                      child: Image.asset(
+                        WebPathsHelper.samsungScreen,
+                        height: ScreenSizeHelper.w(widget.constraints, 24),
+                        width: ScreenSizeHelper.w(widget.constraints, 12),
                       ),
                     ),
                   ],
@@ -146,11 +146,6 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                       ),
                     ),
                   ),
-                  Image.asset(
-                    WebPathsHelper.iPhoneScreen,
-                    height: ScreenSizeHelper.w(widget.constraints, 24.5),
-                    width: ScreenSizeHelper.w(widget.constraints, 12),
-                  ),
                   Padding(
                     padding: EdgeInsets.only(right: ScreenSizeHelper.w(widget.constraints, .5)),
                     child: SizedBox(
@@ -171,6 +166,11 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
                         ],
                       ),
                     ),
+                  ),
+                  Image.asset(
+                    WebPathsHelper.iPhoneScreen,
+                    height: ScreenSizeHelper.w(widget.constraints, 24.5),
+                    width: ScreenSizeHelper.w(widget.constraints, 12),
                   ),
                 ],
               ),

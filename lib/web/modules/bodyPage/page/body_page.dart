@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:web/web.dart' as web;
 import 'package:flutter/material.dart';
+import '../../../utils/helpers/screen_size_helper.dart';
+import '../../../utils/helpers/web_paths_helper.dart';
 import '../controller/body_controller.dart';
 import '../../homePage/page/home_page.dart';
 import '../widget/body_children_widget.dart';
@@ -40,20 +42,51 @@ class _BodyPageState extends State<BodyPage> {
             },
             child: Stack(
               children: [
-                HeaderPage(),
-                BodyChildrenWidget(
-                  childrenWidget: [
-                    VisibilityDetector(
-                      key: Key("HomePageWidget"),
-                      onVisibilityChanged: _controller.onVisibilityChanged,
-                      child: HomePage(
-                        constraints: constraints,
-                      ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Image.asset(
+                    WebPathsHelper.homeBackgroundRight,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.asset(
+                    WebPathsHelper.homeBackgroundBottom,
+                    fit: BoxFit.fill,
+                    width: ScreenSizeHelper.w(constraints, 100),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Image.asset(
+                    WebPathsHelper.homeBackgroundTop,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Column(
+                  children: [
+                    HeaderPage(
+                      constraints: constraints,
                     ),
-                    Obx(
-                      () => ProjectPage(
+                    Expanded(
+                      child: BodyChildrenWidget(
                         constraints: constraints,
-                        allowScroll: _controller.allowScroll.value,
+                        childrenWidget: [
+                          VisibilityDetector(
+                            key: Key("HomePageWidget"),
+                            onVisibilityChanged: _controller.onVisibilityChanged,
+                            child: HomePage(
+                              constraints: constraints,
+                            ),
+                          ),
+                          Obx(
+                            () => ProjectPage(
+                              constraints: constraints,
+                              allowScroll: _controller.allowScroll.value,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

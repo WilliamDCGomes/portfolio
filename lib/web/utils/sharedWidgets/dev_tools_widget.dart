@@ -18,19 +18,18 @@ class DevToolsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ScreenSizeHelper.myToolsIconWidth(constraintType, 4),
-      width: ScreenSizeHelper.myToolsIconWidth(constraintType, 4),
+      height: ScreenSizeHelper.h(constraintType, 6),
+      width: ScreenSizeHelper.h(constraintType, 15),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(ScreenSizeHelper.w(constraintType, .5)),
-            margin: EdgeInsets.only(bottom: ScreenSizeHelper.w(constraintType, .5)),
+            padding: EdgeInsets.all(ScreenSizeHelper.h(constraintType, .5)),
+            margin: EdgeInsets.only(bottom: ScreenSizeHelper.h(constraintType, .5)),
             decoration: BoxDecoration(
               color: WebColors.backgroundToolItemColor,
-              borderRadius: BorderRadius.circular(ScreenSizeHelper.w(constraintType, .5)),
-
+              borderRadius: BorderRadius.circular(ScreenSizeHelper.h(constraintType, 1)),
             ),
             child: Image.asset(
               toolImagePath,
@@ -41,11 +40,12 @@ class DevToolsWidget extends StatelessWidget {
           ),
           TextWebWidget(
             toolName,
-            fontSize: ScreenSizeHelper.sp(constraintType, 14),
+            fontSize: ScreenSizeHelper.sp(constraintType, 13),
             fontWeight: FontWeight.w100,
             textAlign: TextAlign.center,
-            maxLines: 6,
+            maxLines: 2,
             textColor: WebColors.textWebColor,
+            textOverflow: TextOverflow.ellipsis,
           ),
         ],
       ),
