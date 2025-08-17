@@ -70,65 +70,74 @@ class _ProjectPageState extends State<ProjectPage> {
           SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
           SizedBox(
             height: ScreenSizeHelper.fullH(widget.constraints, 80, 550),
-            child: AbsorbPointer(
-              absorbing: !widget.allowScroll,
-              child: ListView.builder(
-                physics: widget.allowScroll ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
-                itemCount: _controller.projects.length,
-                itemBuilder: (BuildContext context, int index) {
-                  var project = _controller.projects[index];
+            child: Stack(
+              children: [
+                ListView.builder(
+                  physics: widget.allowScroll ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
+                  itemCount: _controller.projects.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var project = _controller.projects[index];
 
-                  return project.title != _controller.projects.last.title ? ProjectCardWidget(
-                    even: index % 2 == 0,
-                    project: project,
-                    constraints: widget.constraints,
-                  ) : Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ProjectCardWidget(
-                        even: index % 2 == 0,
-                        project: project,
-                        constraints: widget.constraints,
-                      ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                      ButtonWebWidget(
-                        constraintType: widget.constraints,
-                        backgroundColor: WebColors.blueWebColor,
-                        borderColor: WebColors.blueWebColor,
-                        padding: EdgeInsets.zero,
-                        heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
-                        widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.add,
-                              color: WebColors.textWebColor,
-                              size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
-                            ),
-                            SizedBox(
-                              width: ScreenSizeHelper.w(widget.constraints, .5),
-                            ),
-                            TextWebWidget(
-                              "Ver Todos",
-                              fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
-                              maxLines: 2,
-                              fontWeight: FontWeight.w100,
-                              textAlign: TextAlign.start,
-                              textColor: WebColors.textWebColor,
-                            ),
-                          ],
+                    return project.title != _controller.projects.last.title ? ProjectCardWidget(
+                      even: index % 2 == 0,
+                      project: project,
+                      constraints: widget.constraints,
+                    ) : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ProjectCardWidget(
+                          even: index % 2 == 0,
+                          project: project,
+                          constraints: widget.constraints,
                         ),
-                        onPressed: () {
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                        ButtonWebWidget(
+                          constraintType: widget.constraints,
+                          backgroundColor: WebColors.blueWebColor,
+                          borderColor: WebColors.blueWebColor,
+                          padding: EdgeInsets.zero,
+                          heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
+                          widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.add,
+                                color: WebColors.textWebColor,
+                                size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                              ),
+                              SizedBox(
+                                width: ScreenSizeHelper.w(widget.constraints, .5),
+                              ),
+                              TextWebWidget(
+                                "Ver Todos",
+                                fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                                maxLines: 2,
+                                fontWeight: FontWeight.w100,
+                                textAlign: TextAlign.start,
+                                textColor: WebColors.textWebColor,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
 
-                        },
-                      ),
-                      SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                    ],
-                  );
-                },
-              ),
+                          },
+                        ),
+                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                      ],
+                    );
+                  },
+                ),
+                Visibility(
+                  visible: !widget.allowScroll,
+                  child: Container(
+                    height: double.maxFinite,
+                    width: double.maxFinite,
+                    color: WebColors.transparentColor,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
