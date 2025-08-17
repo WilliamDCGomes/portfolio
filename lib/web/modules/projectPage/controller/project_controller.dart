@@ -1,12 +1,25 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../../../base/models/project.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
 
 class ProjectController extends GetxController {
+  late RxBool internalAllowScroll;
   final Object constraints;
+  late ScrollController scrollController;
   late List<Project> projects;
 
   ProjectController(this.constraints) {
+    internalAllowScroll = true.obs;
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
+        internalAllowScroll.value = false;
+        Future.delayed(Duration(seconds: 1), () {
+          internalAllowScroll.value = true;
+        });
+      }
+    });
     projects = <Project> [
       Project(
         title: "Social Media Video Creator",

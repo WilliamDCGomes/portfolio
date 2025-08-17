@@ -66,7 +66,9 @@ class _ExperiencePageState extends State<ExperiencePage> {
               children: [
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: widget.allowScroll ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
+                  controller: _controller.scrollController,
+                  physics: widget.allowScroll && _controller.internalAllowScroll.value
+                      ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
                   itemCount: _controller.experience.length,
                   itemBuilder: (builder, index) {
                     return Column(

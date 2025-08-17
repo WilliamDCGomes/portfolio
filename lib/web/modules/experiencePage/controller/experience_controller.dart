@@ -1,11 +1,24 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../../../base/models/experience.dart';
 import '../../../utils/helpers/web_paths_helper.dart';
 
 class ExperienceController extends GetxController {
+  late RxBool internalAllowScroll;
+  late ScrollController scrollController;
   late final List<Experience> experience;
 
   ExperienceController() {
+    internalAllowScroll = true.obs;
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
+        internalAllowScroll.value = false;
+        Future.delayed(Duration(seconds: 1), () {
+          internalAllowScroll.value = true;
+        });
+      }
+    });
     experience = <Experience>[
       Experience(
         company: "BNP Paribas",
