@@ -69276,11 +69276,14 @@ if(q.c){q=n.ax
 q===$&&A.a()
 q=q.gt(0)}else q=!1
 q=q?new A.wT(k):new A.nx(k)
-l.d.ch===$&&A.a()
+n=l.d
+n.ch===$&&A.a()
 q=A.ank(m,new A.agg(l),3,q,!0)
-m=l.a.c
-n=t.E
-return A.bI(A.ds(A.c([i,r,s,o,A.aO(A.hT(B.bh,A.c([q,A.atA(A.bI(k,B.ac,k,j,k,k,j),!m)],n),B.bY),p*70/100,k)],n),B.ah,B.P,B.ai,0),B.hk,k,h*100/100,k,new A.aV(g,h*8/100,g,0),f)}}
+if(l.a.c){n=n.ax
+n===$&&A.a()
+n=!n.gt(0)}else n=!0
+m=t.E
+return A.bI(A.ds(A.c([i,r,s,o,A.aO(A.hT(B.bh,A.c([q,A.atA(A.bI(k,B.ac,k,j,k,k,j),n)],m),B.bY),p*70/100,k)],m),B.ah,B.P,B.ai,0),B.hk,k,h*100/100,k,new A.aV(g,h*8/100,g,0),f)}}
 A.agg.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l=null,k=this.a,j=k.a.d,i=k.d
 i===$&&A.a()
@@ -69585,31 +69588,34 @@ am(){return new A.Tz()}}
 A.Tz.prototype={
 ar(){this.d=A.vI($.bC(),A.aCX(this.a.d),t.e0)
 this.aN()},
-M(a){var s,r,q,p,o,n,m=this,l=null,k=17976931348623157e292,j=m.a.d,i=j.b,h=Math.max(i*100/100,550),g=i*5/100,f=i*0.6/100
-i/=100
-s=A.kA(new A.aH(i,i))
-f=A.bI(A.bW("Projetos",A.c2(j,15),l,l,l,B.J,l),l,new A.dr(B.ba,l,l,s,l,l,B.b9),l,l,new A.aV(i,f,i,f),l)
-i=m.a.d
-s=A.aO(l,i.d/100,l)
-i=A.bW("Confira o meu portif\xf3lio com os projetos que foram desenvolvidos.",A.c2(i,18),B.bd,3,B.bC,B.J,l)
-r=m.a
+M(a){var s,r,q,p,o,n,m,l=this,k=null,j=17976931348623157e292,i=l.a.d,h=i.b,g=Math.max(h*100/100,550),f=h*5/100,e=h*0.6/100
+h/=100
+s=A.kA(new A.aH(h,h))
+e=A.bI(A.bW("Projetos",A.c2(i,15),k,k,k,B.J,k),k,new A.dr(B.ba,k,k,s,k,k,B.b9),k,k,new A.aV(h,e,h,e),k)
+h=l.a.d
+s=A.aO(k,h.d/100,k)
+h=A.bW("Confira o meu portif\xf3lio com os projetos que foram desenvolvidos.",A.c2(h,18),B.bd,3,B.bC,B.J,k)
+r=l.a
 q=r.d.d
-p=A.aO(l,q*2/100,l)
+p=A.aO(k,q*2/100,k)
 q=Math.max(q*80/100,550)
-o=m.d
+o=l.d
 o===$&&A.a()
 n=o.ch
 n===$&&A.a()
 if(r.c){r=o.ax
 r===$&&A.a()
 r=r.gt(0)}else r=!1
-r=r?new A.wT(l):new A.nx(l)
-o=m.d.CW
+r=r?new A.wT(k):new A.nx(k)
+o=l.d
+m=o.CW
+m===$&&A.a()
+r=A.ank(n,new A.aie(l),m.length,r,!1)
+if(l.a.c){o=o.ax
 o===$&&A.a()
-r=A.ank(n,new A.aie(m),o.length,r,!1)
-o=m.a.c
+o=!o.gt(0)}else o=!0
 n=t.E
-return A.bI(A.ds(A.c([f,s,i,p,A.aO(A.hT(B.bh,A.c([r,A.atA(A.bI(l,B.ac,l,k,l,l,k),!o)],n),B.bY),q,l)],n),B.ah,B.P,B.ai,0),B.hk,l,l,l,new A.aV(g,j.d*8/100,g,0),h)}}
+return A.bI(A.ds(A.c([e,s,h,p,A.aO(A.hT(B.bh,A.c([r,A.atA(A.bI(k,B.ac,k,j,k,k,j),o)],n),B.bY),q,k)],n),B.ah,B.P,B.ai,0),B.hk,k,k,k,new A.aV(f,i.d*8/100,f,0),g)}}
 A.aie.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l,k=null,j=this.a,i=j.d
 i===$&&A.a()
