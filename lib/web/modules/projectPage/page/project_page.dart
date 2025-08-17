@@ -29,6 +29,10 @@ class _ProjectPageState extends State<ProjectPage> {
   void initState() {
     _controller = Get.put(ProjectController(widget.constraints));
     super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      _controller.internalAllowScroll.value = true;
+    });
   }
 
   @override
@@ -70,76 +74,82 @@ class _ProjectPageState extends State<ProjectPage> {
           SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
           SizedBox(
             height: ScreenSizeHelper.fullH(widget.constraints, 80, 550),
-            child: Stack(
-              children: [
-                ListView.builder(
-                  controller: _controller.scrollController,
-                  physics: widget.allowScroll && _controller.internalAllowScroll.value
-                      ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
-                  itemCount: _controller.projects.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var project = _controller.projects[index];
+            child: Obx(
+              () {
+                final allow = _controller.internalAllowScroll.value;
+                debugPrint(allow.toString());
+                return Stack(
+                  children: [
+                    ListView.builder(
+                      controller: _controller.scrollController,
+                      physics: widget.allowScroll && _controller.internalAllowScroll.value
+                          ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
+                      itemCount: _controller.projects.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var project = _controller.projects[index];
 
-                    return project.title != _controller.projects.last.title ? ProjectCardWidget(
-                      even: index % 2 == 0,
-                      project: project,
-                      constraints: widget.constraints,
-                    ) : Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        ProjectCardWidget(
+                        return project.title != _controller.projects.last.title ? ProjectCardWidget(
                           even: index % 2 == 0,
                           project: project,
                           constraints: widget.constraints,
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                        ButtonWebWidget(
-                          constraintType: widget.constraints,
-                          backgroundColor: WebColors.blueWebColor,
-                          borderColor: WebColors.blueWebColor,
-                          padding: EdgeInsets.zero,
-                          heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
-                          widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.add,
-                                color: WebColors.textWebColor,
-                                size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                        ) : Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ProjectCardWidget(
+                              even: index % 2 == 0,
+                              project: project,
+                              constraints: widget.constraints,
+                            ),
+                            SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                            ButtonWebWidget(
+                              constraintType: widget.constraints,
+                              backgroundColor: WebColors.blueWebColor,
+                              borderColor: WebColors.blueWebColor,
+                              padding: EdgeInsets.zero,
+                              heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
+                              widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.add,
+                                    color: WebColors.textWebColor,
+                                    size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                                  ),
+                                  SizedBox(
+                                    width: ScreenSizeHelper.w(widget.constraints, .5),
+                                  ),
+                                  TextWebWidget(
+                                    "Ver Todos",
+                                    fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                                    maxLines: 2,
+                                    fontWeight: FontWeight.w100,
+                                    textAlign: TextAlign.start,
+                                    textColor: WebColors.textWebColor,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                width: ScreenSizeHelper.w(widget.constraints, .5),
-                              ),
-                              TextWebWidget(
-                                "Ver Todos",
-                                fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
-                                maxLines: 2,
-                                fontWeight: FontWeight.w100,
-                                textAlign: TextAlign.start,
-                                textColor: WebColors.textWebColor,
-                              ),
-                            ],
-                          ),
-                          onPressed: () {
+                              onPressed: () {
 
-                          },
-                        ),
-                        SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
-                      ],
-                    );
-                  },
-                ),
-                Visibility(
-                  visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
-                  child: Container(
-                    height: double.maxFinite,
-                    width: double.maxFinite,
-                    color: WebColors.transparentColor,
-                  ),
-                ),
-              ],
+                              },
+                            ),
+                            SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                          ],
+                        );
+                      },
+                    ),
+                    Visibility(
+                      visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
+                      child: Container(
+                        height: double.maxFinite,
+                        width: double.maxFinite,
+                        color: WebColors.transparentColor,
+                      ),
+                    ),
+                  ],
+                );
+              }
             ),
           ),
         ],

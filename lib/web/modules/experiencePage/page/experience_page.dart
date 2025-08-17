@@ -29,6 +29,10 @@ class _ExperiencePageState extends State<ExperiencePage> {
   void initState() {
     _controller = Get.put(ExperienceController());
     super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      _controller.internalAllowScroll.value = true;
+    });
   }
 
   @override
@@ -62,74 +66,80 @@ class _ExperiencePageState extends State<ExperiencePage> {
           SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
           SizedBox(
             height: ScreenSizeHelper.h(widget.constraints, 70),
-            child: Stack(
-              children: [
-                ListView.builder(
-                  shrinkWrap: true,
-                  controller: _controller.scrollController,
-                  physics: widget.allowScroll && _controller.internalAllowScroll.value
-                      ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
-                  itemCount: _controller.experience.length,
-                  itemBuilder: (builder, index) {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ExperienceCardWidget(
-                          constraints: widget.constraints,
-                          experience: _controller.experience[index],
-                          lastItem: index + 1 == _controller.experience.length,
-                        ),
-                        index + 1 == _controller.experience.length ? Column(
+            child: Obx(
+              () {
+                final allow = _controller.internalAllowScroll.value;
+                debugPrint(allow.toString());
+                return Stack(
+                  children: [
+                    ListView.builder(
+                      shrinkWrap: true,
+                      controller: _controller.scrollController,
+                      physics: widget.allowScroll && _controller.internalAllowScroll.value
+                          ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
+                      itemCount: _controller.experience.length,
+                      itemBuilder: (builder, index) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
-                            ButtonWebWidget(
-                              constraintType: widget.constraints,
-                              backgroundColor: WebColors.blueWebColor,
-                              borderColor: WebColors.blueWebColor,
-                              padding: EdgeInsets.zero,
-                              heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
-                              widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.add,
-                                    color: WebColors.textWebColor,
-                                    size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
-                                  ),
-                                  SizedBox(
-                                    width: ScreenSizeHelper.w(widget.constraints, .5),
-                                  ),
-                                  TextWebWidget(
-                                    "Ver Todas",
-                                    fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
-                                    maxLines: 2,
-                                    fontWeight: FontWeight.w100,
-                                    textAlign: TextAlign.start,
-                                    textColor: WebColors.textWebColor,
-                                  ),
-                                ],
-                              ),
-                              onPressed: () {
-
-                              },
+                            ExperienceCardWidget(
+                              constraints: widget.constraints,
+                              experience: _controller.experience[index],
+                              lastItem: index + 1 == _controller.experience.length,
                             ),
-                            SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                            index + 1 == _controller.experience.length ? Column(
+                              children: [
+                                SizedBox(height: ScreenSizeHelper.h(widget.constraints, 4)),
+                                ButtonWebWidget(
+                                  constraintType: widget.constraints,
+                                  backgroundColor: WebColors.blueWebColor,
+                                  borderColor: WebColors.blueWebColor,
+                                  padding: EdgeInsets.zero,
+                                  heightButton: ScreenSizeHelper.buttonH(widget.constraints, 2),
+                                  widthButton: ScreenSizeHelper.buttonW(widget.constraints, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.add,
+                                        color: WebColors.textWebColor,
+                                        size: ScreenSizeHelper.buttonIcon(widget.constraints, 1.5),
+                                      ),
+                                      SizedBox(
+                                        width: ScreenSizeHelper.w(widget.constraints, .5),
+                                      ),
+                                      TextWebWidget(
+                                        "Ver Todas",
+                                        fontSize: ScreenSizeHelper.buttonText(widget.constraints, 1),
+                                        maxLines: 2,
+                                        fontWeight: FontWeight.w100,
+                                        textAlign: TextAlign.start,
+                                        textColor: WebColors.textWebColor,
+                                      ),
+                                    ],
+                                  ),
+                                  onPressed: () {
+
+                                  },
+                                ),
+                                SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),
+                              ],
+                            ) : SizedBox(),
                           ],
-                        ) : SizedBox(),
-                      ],
-                    );
-                  },
-                ),
-                Visibility(
-                  visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
-                  child: Container(
-                    height: double.maxFinite,
-                    width: double.maxFinite,
-                    color: WebColors.transparentColor,
-                  ),
-                ),
-              ],
+                        );
+                      },
+                    ),
+                    Visibility(
+                      visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
+                      child: Container(
+                        height: double.maxFinite,
+                        width: double.maxFinite,
+                        color: WebColors.transparentColor,
+                      ),
+                    ),
+                  ],
+                );
+              }
             ),
           ),
         ],
