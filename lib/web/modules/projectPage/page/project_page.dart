@@ -132,7 +132,7 @@ class _ProjectPageState extends State<ProjectPage> {
                   },
                 ),
                 Visibility(
-                  visible: !widget.allowScroll,
+                  visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
                   child: Container(
                     height: double.maxFinite,
                     width: double.maxFinite,

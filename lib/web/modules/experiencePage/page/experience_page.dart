@@ -122,7 +122,7 @@ class _ExperiencePageState extends State<ExperiencePage> {
                   },
                 ),
                 Visibility(
-                  visible: !widget.allowScroll,
+                  visible: !widget.allowScroll || !_controller.internalAllowScroll.value,
                   child: Container(
                     height: double.maxFinite,
                     width: double.maxFinite,
