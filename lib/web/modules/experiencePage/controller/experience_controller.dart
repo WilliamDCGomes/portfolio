@@ -12,7 +12,8 @@ class ExperienceController extends GetxController {
     internalAllowScroll = true.obs;
     scrollController = ScrollController();
     scrollController.addListener(() {
-      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
+      if (scrollController.position.pixels == scrollController.position.maxScrollExtent ||
+          scrollController.position.pixels == scrollController.position.minScrollExtent) {
         internalAllowScroll.value = false;
         Future.delayed(Duration(seconds: 1), () {
           internalAllowScroll.value = true;
