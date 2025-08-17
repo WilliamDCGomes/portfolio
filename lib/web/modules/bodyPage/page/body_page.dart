@@ -1,13 +1,14 @@
 import 'package:get/get.dart';
 import 'package:web/web.dart' as web;
 import 'package:flutter/material.dart';
-import '../../../utils/helpers/screen_size_helper.dart';
-import '../../../utils/helpers/web_paths_helper.dart';
 import '../controller/body_controller.dart';
 import '../../homePage/page/home_page.dart';
 import '../widget/body_children_widget.dart';
 import '../../headerPage/page/header_page.dart';
 import '../../projectPage/page/project_page.dart';
+import '../../../utils/helpers/web_paths_helper.dart';
+import '../../experiencePage/page/experience_page.dart';
+import '../../../utils/helpers/screen_size_helper.dart';
 import '../../../../generated/l10n/app_localization.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:william_portifolio/web/utils/stylePages/web_colors.dart';
@@ -75,15 +76,29 @@ class _BodyPageState extends State<BodyPage> {
                         childrenWidget: [
                           VisibilityDetector(
                             key: Key("HomePageWidget"),
-                            onVisibilityChanged: _controller.onVisibilityChanged,
+                            onVisibilityChanged: _controller.homePageVisibilityChanged,
                             child: HomePage(
                               constraints: constraints,
                             ),
                           ),
                           Obx(
-                            () => ProjectPage(
-                              constraints: constraints,
-                              allowScroll: _controller.allowScroll.value,
+                            () => VisibilityDetector(
+                              key: Key("ProjectPageWidget"),
+                              onVisibilityChanged: _controller.projectPageVisibilityChanged,
+                              child: ProjectPage(
+                                constraints: constraints,
+                                allowScroll: _controller.projectAllowScroll.value,
+                              ),
+                            ),
+                          ),
+                          Obx(
+                            () => VisibilityDetector(
+                              key: Key("ExperiencePageWidget"),
+                              onVisibilityChanged: _controller.experiencePageVisibilityChanged,
+                              child: ExperiencePage(
+                                constraints: constraints,
+                                allowScroll: _controller.experienceAllowScroll.value,
+                              ),
                             ),
                           ),
                         ],

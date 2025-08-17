@@ -4,6 +4,7 @@ import '../../../utils/helpers/screen_size_helper.dart';
 import '../../../utils/sharedWidgets/text_web_widget.dart';
 
 class DescriptionProjectWidget extends StatefulWidget {
+  final bool even;
   final String title;
   final String description;
   final Object constraints;
@@ -11,6 +12,7 @@ class DescriptionProjectWidget extends StatefulWidget {
 
   const DescriptionProjectWidget({
     super.key,
+    required this.even,
     required this.title,
     required this.description,
     required this.constraints,
@@ -46,7 +48,16 @@ class _DescriptionProjectWidgetState extends State<DescriptionProjectWidget> {
     return Container(
       height: ScreenSizeHelper.w(widget.constraints, 32),
       padding: EdgeInsets.all(ScreenSizeHelper.w(widget.constraints, 2)),
-      color: WebColors.secondBackgroundProjectColor,
+      decoration: BoxDecoration(
+        color: WebColors.secondBackgroundProjectColor,
+        borderRadius: widget.even ? BorderRadius.only(
+          topRight: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+          bottomRight: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+        ) : BorderRadius.only(
+          topLeft: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+          bottomLeft: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

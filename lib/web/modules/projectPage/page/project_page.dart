@@ -74,14 +74,11 @@ class _ProjectPageState extends State<ProjectPage> {
               physics: widget.allowScroll ? PassThroughScrollPhysicsHelper() : NeverScrollableScrollPhysics(),
               itemCount: _controller.projects.length,
               itemBuilder: (BuildContext context, int index) {
-                var item = _controller.projects[index];
+                var project = _controller.projects[index];
 
-                return item.title != _controller.projects.last.title ? ProjectCardWidget(
+                return project.title != _controller.projects.last.title ? ProjectCardWidget(
                   even: index % 2 == 0,
-                  title: item.title,
-                  description: item.description,
-                  imagesPath: item.imagesPath,
-                  toolsList: item.toolsList,
+                  project: project,
                   constraints: widget.constraints,
                 ) : Column(
                   mainAxisSize: MainAxisSize.min,
@@ -89,10 +86,7 @@ class _ProjectPageState extends State<ProjectPage> {
                   children: [
                     ProjectCardWidget(
                       even: index % 2 == 0,
-                      title: item.title,
-                      description: item.description,
-                      imagesPath: item.imagesPath,
-                      toolsList: item.toolsList,
+                      project: project,
                       constraints: widget.constraints,
                     ),
                     SizedBox(height: ScreenSizeHelper.h(widget.constraints, 2)),

@@ -15,6 +15,7 @@ dependencies:
   web: ^1.1.1
   http: ^1.4.0
   intl: ^0.20.2
+  jiffy: ^6.4.3
   lottie: ^3.3.1
   provider: ^6.1.5
   flutter_svg: ^2.2.0
@@ -117,6 +118,7 @@ flutter:
     - lib/app/assets/json/
     - lib/app/assets/svgs/
     - lib/web/assets/images/
+    - lib/web/assets/images/companiesExperience/
     - lib/web/assets/images/projects/elephant/
     - lib/web/assets/images/projects/japamix/
     - lib/web/assets/images/projects/pce/

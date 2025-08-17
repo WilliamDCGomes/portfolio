@@ -3,6 +3,7 @@ class WebPathsHelper{
   static const String svgsPath = "lib/web/assets/svgs/";
   static const String imagesPath = "lib/web/assets/images/";
   static const String projectsImagesPath = "lib/web/assets/images/projects/";
+  static const String companiesExperiencePath = "lib/web/assets/images/companiesExperience/";
 
   static const String homeBackgroundTop = "${imagesPath}home_background_top.png";
   static const String homeBackgroundBottom = "${imagesPath}home_background_bottom.png";
@@ -86,4 +87,13 @@ class WebPathsHelper{
   static const String sixthZiPartner = "${projectsImagesPath}zipartner/6.png";
   static const String seventhZiPartner = "${projectsImagesPath}zipartner/7.png";
   static const String eighthZiPartner = "${projectsImagesPath}zipartner/8.png";
+
+  static const String aubayIcon = "${companiesExperiencePath}aubay_icon.png";
+  static const String totvsIcon = "${companiesExperiencePath}totvs_icon.png";
+  static const String wiproIcon = "${companiesExperiencePath}wipro_icon.png";
+  static const String keeperIcon = "${companiesExperiencePath}keeper_icon.png";
+  static const String moovefyIcon = "${companiesExperiencePath}moovefy_icon.png";
+  static const String microsoftIcon = "${companiesExperiencePath}microsoft_icon.png";
+  static const String bnpParibasIcon = "${companiesExperiencePath}bnp_paribas_icon.png";
+  static const String williamDouglasDeveloperIcon = "${companiesExperiencePath}william_douglas_developer_icon.png";
 }

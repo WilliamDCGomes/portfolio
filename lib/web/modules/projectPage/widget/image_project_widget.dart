@@ -6,6 +6,7 @@ import '../../../utils/helpers/screen_size_helper.dart';
 import '../../../utils/sharedWidgets/text_web_widget.dart';
 
 class ImageProjectWidget extends StatefulWidget {
+  final bool even;
   final Object constraints;
   final List<String> imagesPath;
   final CarouselSliderController androidCarouselController = CarouselSliderController();
@@ -13,6 +14,7 @@ class ImageProjectWidget extends StatefulWidget {
 
   ImageProjectWidget({
     super.key,
+    required this.even,
     required this.imagesPath,
     required this.constraints,
   });
@@ -27,7 +29,16 @@ class _ImageProjectWidgetState extends State<ImageProjectWidget> {
     return Container(
       height: ScreenSizeHelper.w(widget.constraints, 32),
       padding: EdgeInsets.all(ScreenSizeHelper.w(widget.constraints, .5)),
-      color: WebColors.backgroundProjectColor,
+      decoration: BoxDecoration(
+        color: WebColors.backgroundProjectColor,
+        borderRadius: widget.even ? BorderRadius.only(
+          topLeft: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+          bottomLeft: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+        ) : BorderRadius.only(
+          topRight: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+          bottomRight: Radius.circular(ScreenSizeHelper.h(widget.constraints, 3)),
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
